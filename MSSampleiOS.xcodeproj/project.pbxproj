@@ -14,6 +14,10 @@
 		B023311C2358AD5800FBC025 /* PhotoCollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023311B2358AD5800FBC025 /* PhotoCollectionMapper.swift */; };
 		B023311F2358ADB200FBC025 /* PhotoCollectionItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023311E2358ADB200FBC025 /* PhotoCollectionItemDTO.swift */; };
 		B02331212358ADF200FBC025 /* PhotoCollectionMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02331202358ADF200FBC025 /* PhotoCollectionMapperTests.swift */; };
+		B02331252358CAE900FBC025 /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1184C23586FDE004955EA /* HTTPClientTests.swift */; };
+		B02331282358CB9100FBC025 /* SpyHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02331272358CB9100FBC025 /* SpyHTTPClient.swift */; };
+		B023312B2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023312A2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift */; };
+		B023312E2358CE2800FBC025 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023312D2358CE2800FBC025 /* AppConfiguration.swift */; };
 		B0B0687123586483003920BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0687023586483003920BA /* AppDelegate.swift */; };
 		B0B0687823586485003920BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687723586485003920BA /* Assets.xcassets */; };
 		B0B0687B23586485003920BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687923586485003920BA /* LaunchScreen.storyboard */; };
@@ -24,7 +28,6 @@
 		B0B1185523587415004955EA /* SpyURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1185423587415004955EA /* SpyURLSession.swift */; };
 		B0B11858235874BF004955EA /* SpyURLSessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B11857235874BF004955EA /* SpyURLSessionDataTask.swift */; };
 		B0B1185A235876AE004955EA /* SpyHTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B11859235876AE004955EA /* SpyHTTPURLResponse.swift */; };
-		B0B1185D235877F4004955EA /* HTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1184C23586FDE004955EA /* HTTPClientTests.swift */; };
 		B0B118602358A643004955EA /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1185F2358A643004955EA /* HTTPResponse.swift */; };
 		B0B118622358A651004955EA /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B118612358A651004955EA /* HTTPError.swift */; };
 		B0B118652358A67D004955EA /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B118642358A67D004955EA /* HTTPRequest.swift */; };
@@ -55,6 +58,9 @@
 		B023311B2358AD5800FBC025 /* PhotoCollectionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionMapper.swift; sourceTree = "<group>"; };
 		B023311E2358ADB200FBC025 /* PhotoCollectionItemDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionItemDTO.swift; sourceTree = "<group>"; };
 		B02331202358ADF200FBC025 /* PhotoCollectionMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionMapperTests.swift; sourceTree = "<group>"; };
+		B02331272358CB9100FBC025 /* SpyHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyHTTPClient.swift; sourceTree = "<group>"; };
+		B023312A2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyPhotoCollectionMapper.swift; sourceTree = "<group>"; };
+		B023312D2358CE2800FBC025 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		B0B0686D23586483003920BA /* MSSampleiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSSampleiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B0687023586483003920BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B0687723586485003920BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			children = (
 				B023311B2358AD5800FBC025 /* PhotoCollectionMapper.swift */,
 				B02331202358ADF200FBC025 /* PhotoCollectionMapperTests.swift */,
+				B02331292358CCC600FBC025 /* __mocks__ */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -161,6 +168,30 @@
 				B023311E2358ADB200FBC025 /* PhotoCollectionItemDTO.swift */,
 			);
 			path = DTO;
+			sourceTree = "<group>";
+		};
+		B02331262358CB8200FBC025 /* __mocks__ */ = {
+			isa = PBXGroup;
+			children = (
+				B02331272358CB9100FBC025 /* SpyHTTPClient.swift */,
+			);
+			path = __mocks__;
+			sourceTree = "<group>";
+		};
+		B02331292358CCC600FBC025 /* __mocks__ */ = {
+			isa = PBXGroup;
+			children = (
+				B023312A2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift */,
+			);
+			path = __mocks__;
+			sourceTree = "<group>";
+		};
+		B023312C2358CE1B00FBC025 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B023312D2358CE2800FBC025 /* AppConfiguration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		B0B0686423586483003920BA = {
@@ -276,6 +307,7 @@
 		B0B1183923586C03004955EA /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B023312C2358CE1B00FBC025 /* Configuration */,
 				B0B1183A23586C13004955EA /* Network */,
 			);
 			path = Core;
@@ -312,6 +344,7 @@
 			children = (
 				B0B1183B23586C2D004955EA /* HTTPClient.swift */,
 				B0B1184C23586FDE004955EA /* HTTPClientTests.swift */,
+				B02331262358CB8200FBC025 /* __mocks__ */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -502,6 +535,7 @@
 				B02331172358AC4A00FBC025 /* PhotoCollectionRepository.swift in Sources */,
 				B0B118602358A643004955EA /* HTTPResponse.swift in Sources */,
 				B0B0687123586483003920BA /* AppDelegate.swift in Sources */,
+				B023312E2358CE2800FBC025 /* AppConfiguration.swift in Sources */,
 				B023311F2358ADB200FBC025 /* PhotoCollectionItemDTO.swift in Sources */,
 				B0B118652358A67D004955EA /* HTTPRequest.swift in Sources */,
 				B0B118622358A651004955EA /* HTTPError.swift in Sources */,
@@ -515,10 +549,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B02331192358ACCD00FBC025 /* PhotoCollectionRepositoryTests.swift in Sources */,
-				B0B1185D235877F4004955EA /* HTTPClientTests.swift in Sources */,
+				B02331282358CB9100FBC025 /* SpyHTTPClient.swift in Sources */,
 				B0B11858235874BF004955EA /* SpyURLSessionDataTask.swift in Sources */,
 				B02331212358ADF200FBC025 /* PhotoCollectionMapperTests.swift in Sources */,
+				B02331252358CAE900FBC025 /* HTTPClientTests.swift in Sources */,
 				B0B1185523587415004955EA /* SpyURLSession.swift in Sources */,
+				B023312B2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift in Sources */,
 				B0B068A8235867EC003920BA /* SampleTests.swift in Sources */,
 				B0B1185A235876AE004955EA /* SpyHTTPURLResponse.swift in Sources */,
 			);
