@@ -59,33 +59,3 @@ final class HTTPClient: HTTPClientProtocol {
         dataTask?.cancel()
     }
 }
-
-struct HTTPRequest {
-    let url: String
-    let method: Method
-    let body: Data?
-
-    init(url: String, method: Method, body: Data? = nil) {
-        self.url = url
-        self.method = method
-        self.body = body
-    }
-}
-
-extension HTTPRequest {
-    enum Method: String {
-        case GET
-        case POST
-    }
-}
-
-struct HTTPResponse {
-    let statusCode: Int
-    let body: Data?
-}
-
-enum HTTPError: Error {
-    case _unknown(Error)
-    case dataNotAvailable
-    case apiStatusError(HTTPResponse)
-}
