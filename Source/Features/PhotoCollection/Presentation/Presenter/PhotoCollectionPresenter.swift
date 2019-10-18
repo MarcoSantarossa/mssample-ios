@@ -29,6 +29,12 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
     func cancelLoadImage(at index: Int) {
 
     }
+
+    func title(at index: Int) -> String {
+        guard index < items.count else { return "" }
+
+        return items[index].title
+    }
 }
 
 extension PhotoCollectionPresenter {

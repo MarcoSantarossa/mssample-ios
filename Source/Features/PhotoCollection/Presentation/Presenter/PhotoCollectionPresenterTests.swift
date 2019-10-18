@@ -81,3 +81,20 @@ extension PhotoCollectionPresenterTests {
         XCTAssertEqual(onDataDidUpdateCallsCount, 1)
     }
 }
+
+// MARK: - title(at:)
+extension PhotoCollectionPresenterTests {
+    func test_title_invalidIndex_returnsEmpty() {
+        let result = sut.title(at: 10)
+
+        XCTAssertEqual(result, "")
+    }
+
+    func test_title_validIndex_returnsValidTitle() {
+        loadItems()
+
+        let result = sut.title(at: 1)
+
+        XCTAssertEqual(result, "t2")
+    }
+}

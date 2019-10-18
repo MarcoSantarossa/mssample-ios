@@ -11,6 +11,8 @@ protocol PhotoCollectionPresenterOutput: AnyObject {
     var itemsCount: Int { get }
 
     var onDataDidUpdate: (() -> Void)? { get set }
+
+    func title(at index: Int) -> String
 }
 
 typealias PhotoCollectionPresenterProtocol = PhotoCollectionPresenterInput & PhotoCollectionPresenterOutput
