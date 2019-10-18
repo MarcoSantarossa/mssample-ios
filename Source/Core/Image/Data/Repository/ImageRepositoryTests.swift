@@ -38,22 +38,13 @@ extension ImageRepositoryTests {
         XCTAssertNil(httpClient.fetchRequestArg.body)
     }
 
-    func test_getImage_callsCompletion() {
+    func test_getImage_httpClientReturnsError_doesNotCallCompletion() {
         var completionCallsCount = 0
         httpClient.forcedFetchResult = .failure(.dataNotAvailable)
 
         sut.getImage(at: "www.google.com") { _ in completionCallsCount += 1 }
 
-        XCTAssertEqual(completionCallsCount, 1)
-    }
-
-    func test_getImage_httpClientReturnsError_returnsNil() {
-        var arg: Image?
-        httpClient.forcedFetchResult = .failure(.dataNotAvailable)
-
-        sut.getImage(at: "www.google.com") { arg = $0 }
-
-        XCTAssertNil(arg)
+        XCTAssertEqual(completionCallsCount, 0)
     }
 
     func test_getImage_httpClientReturnsSuccess_returnsImage() {
