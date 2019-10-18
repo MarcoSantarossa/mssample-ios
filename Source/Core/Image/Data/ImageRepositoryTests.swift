@@ -37,4 +37,33 @@ extension ImageRepositoryTests {
         XCTAssertEqual(httpClient.fetchRequestArg.method, .GET)
         XCTAssertNil(httpClient.fetchRequestArg.body)
     }
+
+    func test_getImage_callsCompletion() {
+        var completionCallsCount = 0
+        httpClient.forcedFetchResult = .failure(.dataNotAvailable)
+
+        sut.getImage(at: "www.google.com") { _ in completionCallsCount += 1 }
+
+        XCTAssertEqual(completionCallsCount, 1)
+    }
+
+    func test_getImage_httpClientReturnsError_returnsNil() {
+        var arg: Image?
+        httpClient.forcedFetchResult = .failure(.dataNotAvailable)
+
+        sut.getImage(at: "www.google.com") { arg = $0 }
+
+        XCTAssertNil(arg)
+    }
+
+    func test_getImage_httpClientReturnsSuccess_returnsImage() {
+        let data = "tests".data(using: .utf8)
+        var arg: Image!
+        httpClient.forcedFetchResult = .success(.init(statusCode: 200, body: data))
+
+        sut.getImage(at: "www.google.com") { arg = $0 }
+
+        XCTAssertEqual(arg.id, "www.google.com")
+        XCTAssertEqual(arg.data, data)
+    }
 }
