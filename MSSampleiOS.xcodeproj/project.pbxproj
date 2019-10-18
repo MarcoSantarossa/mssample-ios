@@ -32,7 +32,6 @@
 		B0B0687823586485003920BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687723586485003920BA /* Assets.xcassets */; };
 		B0B0687B23586485003920BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687923586485003920BA /* LaunchScreen.storyboard */; };
 		B0B0689123586485003920BA /* MSSampleiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0689023586485003920BA /* MSSampleiOSUITests.swift */; };
-		B0B068A8235867EC003920BA /* SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B068A7235867EC003920BA /* SampleTests.swift */; };
 		B0B1183C23586C2D004955EA /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1183B23586C2D004955EA /* HTTPClient.swift */; };
 		B0B118522358708F004955EA /* URLSession+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B118512358708F004955EA /* URLSession+Protocol.swift */; };
 		B0B1185523587415004955EA /* SpyURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B1185423587415004955EA /* SpyURLSession.swift */; };
@@ -91,7 +90,6 @@
 		B0B0688C23586485003920BA /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B0689023586485003920BA /* MSSampleiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSSampleiOSUITests.swift; sourceTree = "<group>"; };
 		B0B0689223586485003920BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0B068A7235867EC003920BA /* SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTests.swift; sourceTree = "<group>"; };
 		B0B1183B23586C2D004955EA /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		B0B1184C23586FDE004955EA /* HTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientTests.swift; sourceTree = "<group>"; };
 		B0B118512358708F004955EA /* URLSession+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Protocol.swift"; sourceTree = "<group>"; };
@@ -333,7 +331,6 @@
 			children = (
 				B0B1184E2358705D004955EA /* Mocks */,
 				B0B0688723586485003920BA /* Info.plist */,
-				B0B068A7235867EC003920BA /* SampleTests.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -667,7 +664,6 @@
 				B023313E2359C12900FBC025 /* PhotoCollectionPresenterTests.swift in Sources */,
 				B0B1185523587415004955EA /* SpyURLSession.swift in Sources */,
 				B023312B2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift in Sources */,
-				B0B068A8235867EC003920BA /* SampleTests.swift in Sources */,
 				B0B1185A235876AE004955EA /* SpyHTTPURLResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
