@@ -3,7 +3,7 @@ import Foundation
 protocol PhotoCollectionPresenterInput: AnyObject {
     func viewDidLoad()
 
-    func startLoadImage(at index: Int, completion: (Data) -> Void)
+    func startLoadImage(at index: Int, completion: @escaping (Data) -> Void)
     func cancelLoadImage(at index: Int)
 }
 

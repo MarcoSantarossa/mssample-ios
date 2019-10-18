@@ -8,11 +8,13 @@ final class SpyImageRepository: ImageRepositoryProtocol {
 
     private(set) var cancelCallsCount = 0
 
-    func getImage(at url: String, completion: @escaping (Image?) -> Void) {
+    func getImage(at url: String, completion: @escaping (Image) -> Void) {
         getImageCallsCount += 1
         getImageUrlArg = url
 
-        completion(forcedGetImage)
+        if let forcedGetImage = forcedGetImage {
+            completion(forcedGetImage)
+        }
     }
 
     func cancel() {

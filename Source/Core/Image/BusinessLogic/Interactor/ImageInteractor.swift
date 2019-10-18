@@ -1,7 +1,9 @@
 import Foundation
 
 protocol ImageInteractorProtocol: AnyObject {
-    func getImage(at url: String, completion: @escaping (Image?) -> Void)
+    init()
+
+    func getImage(at url: String, completion: @escaping (Image) -> Void)
 
     func cancel()
 }
@@ -10,11 +12,15 @@ final class ImageInteractor: ImageInteractorProtocol {
 
     private let dependencies: Dependencies
 
-    init(dependencies: Dependencies = .init()) {
+    init() {
+        self.dependencies = Dependencies()
+    }
+
+    init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
 
-    func getImage(at url: String, completion: @escaping (Image?) -> Void) {
+    func getImage(at url: String, completion: @escaping (Image) -> Void) {
         dependencies.repo.getImage(at: url, completion: completion)
     }
 

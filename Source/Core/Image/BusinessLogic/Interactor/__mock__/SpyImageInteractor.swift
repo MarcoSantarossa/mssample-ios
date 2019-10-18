@@ -1,21 +1,34 @@
 @testable import MSSampleiOS
 
-final class SpyImageInteractor: ImageRepositoryProtocol {
+final class SpyImageInteractor: ImageInteractorProtocol {
+
+    static var shared: SpyImageInteractor!
 
     private(set) var getImageCallsCount = 0
     private(set) var getImageUrlArg: String!
-    var forcedGetImage: Image?
+    static var forcedGetImage: Image?
 
     private(set) var cancelCallsCount = 0
 
-    func getImage(at url: String, completion: @escaping (Image?) -> Void) {
+    init() {
+        SpyImageInteractor.shared = self
+    }
+
+    func getImage(at url: String, completion: @escaping (Image) -> Void) {
         getImageCallsCount += 1
         getImageUrlArg = url
 
-        completion(forcedGetImage)
+        if let forcedGetImage = SpyImageInteractor.forcedGetImage {
+            completion(forcedGetImage)
+        }
     }
 
     func cancel() {
         cancelCallsCount += 1
+    }
+
+    static func clean() {
+        forcedGetImage = nil
+        shared = nil
     }
 }

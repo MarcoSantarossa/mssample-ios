@@ -1,7 +1,7 @@
 import Foundation
 
 protocol ImageRepositoryProtocol: AnyObject {
-    func getImage(at url: String, completion: @escaping (Image?) -> Void)
+    func getImage(at url: String, completion: @escaping (Image) -> Void)
 
     func cancel()
 }
@@ -13,7 +13,7 @@ final class ImageRepository: ImageRepositoryProtocol {
         self.dependencies = dependencies
     }
 
-    func getImage(at url: String, completion: @escaping (Image?) -> Void) {
+    func getImage(at url: String, completion: @escaping (Image) -> Void) {
         let request = HTTPRequest(url: url, method: .GET)
         dependencies.httpClient.fetch(with: request) { result in
             guard

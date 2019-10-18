@@ -8,6 +8,7 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
 
     private let dependencies: Dependencies
     private var items = [PhotoCollectionItem]()
+    private var queue = [Int: ImageInteractorProtocol]()
 
     init(dependencies: Dependencies = .init()) {
         self.dependencies = dependencies
@@ -22,12 +23,22 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
         }
     }
 
-    func startLoadImage(at index: Int, completion: (Data) -> Void) {
+    func startLoadImage(at index: Int, completion: @escaping (Data) -> Void) {
+        guard queue[index] == nil && index < items.count else { return }
 
+        let imageInteractor = dependencies.imageInteractorType.init()
+        queue[index] = imageInteractor
+
+        imageInteractor.getImage(at: items[index].thumbnailUrl) { image in
+            completion(image.data)
+        }
     }
 
     func cancelLoadImage(at index: Int) {
+        guard let interactor = queue[index] else { return }
+        interactor.cancel()
 
+        queue[index] = nil
     }
 
     func title(at index: Int) -> String {
@@ -40,9 +51,12 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
 extension PhotoCollectionPresenter {
     final class Dependencies {
         let interactor: PhotoCollectionInteractorProtocol
+        let imageInteractorType: ImageInteractorProtocol.Type
 
-        init(interactor: PhotoCollectionInteractorProtocol = PhotoCollectionInteractor()) {
+        init(interactor: PhotoCollectionInteractorProtocol = PhotoCollectionInteractor(),
+             imageInteractorType: ImageInteractorProtocol.Type = ImageInteractor.self) {
             self.interactor = interactor
+            self.imageInteractorType = imageInteractorType
         }
     }
 }
