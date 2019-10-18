@@ -2,6 +2,8 @@ import Foundation
 
 protocol ImageRepositoryProtocol: AnyObject {
     func getImage(at url: String, completion: @escaping (Image?) -> Void)
+
+    func cancel()
 }
 
 final class ImageRepository: ImageRepositoryProtocol {
@@ -23,6 +25,10 @@ final class ImageRepository: ImageRepositoryProtocol {
             let image = Image(id: url, data: data)
             completion(image)
         }
+    }
+
+    func cancel() {
+        dependencies.httpClient.cancel()
     }
 }
 

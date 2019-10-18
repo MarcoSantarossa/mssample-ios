@@ -67,3 +67,12 @@ extension ImageRepositoryTests {
         XCTAssertEqual(arg.data, data)
     }
 }
+
+// MARK: - cancel
+extension ImageRepositoryTests {
+    func test_cancel_callsHttpClient() {
+        sut.cancel()
+
+        XCTAssertEqual(httpClient.cancelCallsCount, 1)
+    }
+}
