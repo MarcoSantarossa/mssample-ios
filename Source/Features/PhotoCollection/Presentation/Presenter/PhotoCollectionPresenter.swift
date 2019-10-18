@@ -15,6 +15,10 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
     }
 
     func viewDidLoad() {
+        fetchPhotos()
+    }
+
+    private func fetchPhotos() {
         dependencies.interactor.getPhotos { [weak self] items in
             guard let self = self else { return }
 
