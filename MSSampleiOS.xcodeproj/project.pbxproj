@@ -18,6 +18,9 @@
 		B02331282358CB9100FBC025 /* SpyHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02331272358CB9100FBC025 /* SpyHTTPClient.swift */; };
 		B023312B2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023312A2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift */; };
 		B023312E2358CE2800FBC025 /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023312D2358CE2800FBC025 /* AppConfiguration.swift */; };
+		B02331312359B71800FBC025 /* PhotoCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02331302359B71800FBC025 /* PhotoCollectionInteractor.swift */; };
+		B02331332359B7ED00FBC025 /* PhotoCollectionInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02331322359B7ED00FBC025 /* PhotoCollectionInteractorTests.swift */; };
+		B02331362359B85C00FBC025 /* SpyPhotoCollectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02331352359B85C00FBC025 /* SpyPhotoCollectionRepository.swift */; };
 		B0B0687123586483003920BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0687023586483003920BA /* AppDelegate.swift */; };
 		B0B0687823586485003920BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687723586485003920BA /* Assets.xcassets */; };
 		B0B0687B23586485003920BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687923586485003920BA /* LaunchScreen.storyboard */; };
@@ -61,6 +64,9 @@
 		B02331272358CB9100FBC025 /* SpyHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyHTTPClient.swift; sourceTree = "<group>"; };
 		B023312A2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyPhotoCollectionMapper.swift; sourceTree = "<group>"; };
 		B023312D2358CE2800FBC025 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		B02331302359B71800FBC025 /* PhotoCollectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionInteractor.swift; sourceTree = "<group>"; };
+		B02331322359B7ED00FBC025 /* PhotoCollectionInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionInteractorTests.swift; sourceTree = "<group>"; };
+		B02331352359B85C00FBC025 /* SpyPhotoCollectionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyPhotoCollectionRepository.swift; sourceTree = "<group>"; };
 		B0B0686D23586483003920BA /* MSSampleiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSSampleiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B0687023586483003920BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B0687723586485003920BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +126,7 @@
 		B023310F2358ABA700FBC025 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				B023312F2359B70800FBC025 /* Interactor */,
 				B02331102358ABB300FBC025 /* Models */,
 			);
 			path = BusinessLogic;
@@ -148,6 +155,7 @@
 			children = (
 				B02331162358AC4A00FBC025 /* PhotoCollectionRepository.swift */,
 				B02331182358ACCD00FBC025 /* PhotoCollectionRepositoryTests.swift */,
+				B02331342359B84400FBC025 /* __mock__ */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -192,6 +200,23 @@
 				B023312D2358CE2800FBC025 /* AppConfiguration.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		B023312F2359B70800FBC025 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B02331302359B71800FBC025 /* PhotoCollectionInteractor.swift */,
+				B02331322359B7ED00FBC025 /* PhotoCollectionInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B02331342359B84400FBC025 /* __mock__ */ = {
+			isa = PBXGroup;
+			children = (
+				B02331352359B85C00FBC025 /* SpyPhotoCollectionRepository.swift */,
+			);
+			path = __mock__;
 			sourceTree = "<group>";
 		};
 		B0B0686423586483003920BA = {
@@ -266,8 +291,8 @@
 		B0B068A0235864E8003920BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				B023310E2358AB9C00FBC025 /* PhotoCollection */,
 				B0B068A1235864F5003920BA /* Launch */,
+				B023310E2358AB9C00FBC025 /* PhotoCollection */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -539,6 +564,7 @@
 				B023311F2358ADB200FBC025 /* PhotoCollectionItemDTO.swift in Sources */,
 				B0B118652358A67D004955EA /* HTTPRequest.swift in Sources */,
 				B0B118622358A651004955EA /* HTTPError.swift in Sources */,
+				B02331312359B71800FBC025 /* PhotoCollectionInteractor.swift in Sources */,
 				B0B1183C23586C2D004955EA /* HTTPClient.swift in Sources */,
 				B023311C2358AD5800FBC025 /* PhotoCollectionMapper.swift in Sources */,
 			);
@@ -552,7 +578,9 @@
 				B02331282358CB9100FBC025 /* SpyHTTPClient.swift in Sources */,
 				B0B11858235874BF004955EA /* SpyURLSessionDataTask.swift in Sources */,
 				B02331212358ADF200FBC025 /* PhotoCollectionMapperTests.swift in Sources */,
+				B02331362359B85C00FBC025 /* SpyPhotoCollectionRepository.swift in Sources */,
 				B02331252358CAE900FBC025 /* HTTPClientTests.swift in Sources */,
+				B02331332359B7ED00FBC025 /* PhotoCollectionInteractorTests.swift in Sources */,
 				B0B1185523587415004955EA /* SpyURLSession.swift in Sources */,
 				B023312B2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift in Sources */,
 				B0B068A8235867EC003920BA /* SampleTests.swift in Sources */,

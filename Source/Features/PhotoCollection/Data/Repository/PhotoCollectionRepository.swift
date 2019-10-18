@@ -1,12 +1,10 @@
 import Foundation
 
-typealias PhotoCollectionRepositoryCompletion = ([PhotoCollectionItem]) -> Void
-
 protocol PhotoCollectionRepositoryProtocol: AnyObject {
-    func getPhotos(completion: @escaping PhotoCollectionRepositoryCompletion)
+    func getPhotos(completion: @escaping ([PhotoCollectionItem]) -> Void)
 }
 
-final class PhotoCollectionRepository {
+final class PhotoCollectionRepository: PhotoCollectionRepositoryProtocol {
 
     private let dependencies: Dependencies
 
@@ -14,7 +12,7 @@ final class PhotoCollectionRepository {
         self.dependencies = dependencies
     }
 
-    func getPhotos(completion: @escaping PhotoCollectionRepositoryCompletion) {
+    func getPhotos(completion: @escaping ([PhotoCollectionItem]) -> Void) {
         let request = HTTPRequest(url: "\(AppConfiguration.apiBaseUrl)/photos?albumId=1", method: .GET)
         dependencies.httpClient.fetch(with: request) { [weak self] result in
             guard let self = self else { return }
