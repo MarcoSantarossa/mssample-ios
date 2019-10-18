@@ -31,6 +31,7 @@
 		B023314E2359FEC400FBC025 /* ImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023314D2359FEC400FBC025 /* ImageInteractor.swift */; };
 		B0233150235A061400FBC025 /* ImageInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023314F235A061400FBC025 /* ImageInteractorTests.swift */; };
 		B0233154235A06BF00FBC025 /* SpyImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0233153235A06BF00FBC025 /* SpyImageRepository.swift */; };
+		B0233157235A0A0B00FBC025 /* SpyImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0233156235A0A0B00FBC025 /* SpyImageInteractor.swift */; };
 		B0B0687123586483003920BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0687023586483003920BA /* AppDelegate.swift */; };
 		B0B0687823586485003920BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687723586485003920BA /* Assets.xcassets */; };
 		B0B0687B23586485003920BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687923586485003920BA /* LaunchScreen.storyboard */; };
@@ -86,6 +87,7 @@
 		B023314D2359FEC400FBC025 /* ImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractor.swift; sourceTree = "<group>"; };
 		B023314F235A061400FBC025 /* ImageInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractorTests.swift; sourceTree = "<group>"; };
 		B0233153235A06BF00FBC025 /* SpyImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyImageRepository.swift; sourceTree = "<group>"; };
+		B0233156235A0A0B00FBC025 /* SpyImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyImageInteractor.swift; sourceTree = "<group>"; };
 		B0B0686D23586483003920BA /* MSSampleiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSSampleiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B0687023586483003920BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B0687723586485003920BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				B023314D2359FEC400FBC025 /* ImageInteractor.swift */,
 				B023314F235A061400FBC025 /* ImageInteractorTests.swift */,
+				B0233155235A09FA00FBC025 /* __mock__ */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -322,6 +325,14 @@
 			isa = PBXGroup;
 			children = (
 				B0233153235A06BF00FBC025 /* SpyImageRepository.swift */,
+			);
+			path = __mock__;
+			sourceTree = "<group>";
+		};
+		B0233155235A09FA00FBC025 /* __mock__ */ = {
+			isa = PBXGroup;
+			children = (
+				B0233156235A0A0B00FBC025 /* SpyImageInteractor.swift */,
 			);
 			path = __mock__;
 			sourceTree = "<group>";
@@ -699,6 +710,7 @@
 				B02331332359B7ED00FBC025 /* PhotoCollectionInteractorTests.swift in Sources */,
 				B023313E2359C12900FBC025 /* PhotoCollectionPresenterTests.swift in Sources */,
 				B0B1185523587415004955EA /* SpyURLSession.swift in Sources */,
+				B0233157235A0A0B00FBC025 /* SpyImageInteractor.swift in Sources */,
 				B023312B2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift in Sources */,
 				B0B1185A235876AE004955EA /* SpyHTTPURLResponse.swift in Sources */,
 			);
