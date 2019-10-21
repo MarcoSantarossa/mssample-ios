@@ -7,7 +7,11 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
     var onDataDidUpdate: (() -> Void)?
 
     private let dependencies: Dependencies
-    private var items = [PhotoCollectionItem]()
+    private var items = [PhotoCollectionItem]() {
+        didSet {
+            self.onDataDidUpdate?()
+        }
+    }
     private var queue = [Int: ImageInteractorProtocol]()
 
     init(dependencies: Dependencies = .init()) {
@@ -22,8 +26,9 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
         dependencies.interactor.getPhotos { [weak self] items in
             guard let self = self else { return }
 
-            self.items = items
-            self.onDataDidUpdate?()
+            DispatchQueue.main.async {
+                self.items = items
+            }
         }
     }
 
