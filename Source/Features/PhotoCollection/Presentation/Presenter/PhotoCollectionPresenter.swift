@@ -26,9 +26,7 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
         dependencies.interactor.getPhotos { [weak self] items in
             guard let self = self else { return }
 
-            DispatchQueue.main.async {
-                self.items = items
-            }
+            self.items = items
         }
     }
 

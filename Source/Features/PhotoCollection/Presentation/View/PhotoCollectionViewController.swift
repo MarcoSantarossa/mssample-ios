@@ -16,7 +16,9 @@ final class PhotoCollectionViewController: UIViewController {
 
     private func bindPresenter() {
         presenter.onDataDidUpdate = { [weak self] in
-            self?.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
         }
     }
 
@@ -47,6 +49,13 @@ extension PhotoCollectionViewController: UICollectionViewDataSource {
         }
 
         cell.configure(title: presenter.title(at: indexPath.item))
+        presenter.startLoadImage(at: indexPath.item) { data in
+            guard let image = UIImage(data: data) else { return }
+
+            DispatchQueue.main.async {
+                cell.update(image: image)
+            }
+        }
 
         return cell
     }
