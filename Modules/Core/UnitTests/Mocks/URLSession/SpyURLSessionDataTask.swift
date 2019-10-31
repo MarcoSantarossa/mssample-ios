@@ -1,4 +1,4 @@
-import Core
+@testable import Core
 
 final class SpyURLSessionDataTask: URLSessionDataTaskProtocol {
 

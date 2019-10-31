@@ -1,4 +1,4 @@
-import UIKit
+import Core
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -1,4 +1,4 @@
-import UIKit
+import Core
 
 protocol PhotoFlowProtocol: AnyObject {
     func presentCollection()
