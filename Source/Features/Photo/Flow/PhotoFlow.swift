@@ -1,6 +1,10 @@
 import UIKit
 
-final class PhotoFlow {
+protocol PhotoFlowProtocol: AnyObject {
+    func presentCollection()
+}
+
+final class PhotoFlow: PhotoFlowProtocol {
 
     private unowned let parent: NavigationControllerProtocol
 
