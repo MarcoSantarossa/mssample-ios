@@ -378,6 +378,7 @@
 		B073828C236B072E0069A057 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				B02331422359CA7900FBC025 /* Image */,
 				B073828D236B07A60069A057 /* Flow */,
 				B023310E2358AB9C00FBC025 /* PhotoCollection */,
 			);
@@ -514,7 +515,6 @@
 			children = (
 				B023312C2358CE1B00FBC025 /* Configuration */,
 				B0B1185023587074004955EA /* Extension */,
-				B02331422359CA7900FBC025 /* Image */,
 				B0B1183A23586C13004955EA /* Network */,
 			);
 			path = Core;
