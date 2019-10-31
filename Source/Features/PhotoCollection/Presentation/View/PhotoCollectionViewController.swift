@@ -16,8 +16,10 @@ final class PhotoCollectionViewController: UIViewController {
 
     private func bindPresenter() {
         presenter.onDataDidUpdate = { [weak self] in
+            guard let self = self else { return }
+
             DispatchQueue.main.async {
-                self?.collectionView.reloadData()
+                self.collectionView.reloadData()
             }
         }
     }
@@ -29,10 +31,17 @@ final class PhotoCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Photos"
+        setupViewTitle()
+        registerCollectionCell()
 
         presenter.viewDidLoad()
+    }
 
+    private func setupViewTitle() {
+        title = "Photos"
+    }
+
+    private func registerCollectionCell() {
         let nib = UINib(nibName: PhotoCollectionCell.reusableIdentifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: PhotoCollectionCell.reusableIdentifier)
     }
@@ -49,19 +58,27 @@ extension PhotoCollectionViewController: UICollectionViewDataSource {
         }
 
         cell.configure(title: presenter.title(at: indexPath.item))
-        presenter.startLoadImage(at: indexPath.item) { data in
-            guard let image = UIImage(data: data) else { return }
-
-            DispatchQueue.main.async {
-                cell.update(image: image)
-            }
-        }
 
         return cell
     }
 }
 
 extension PhotoCollectionViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let cell = cell as? PhotoCollectionCell else {
+            fatalError("Cell at \(indexPath.item) is not a PhotoCollectionCell")
+        }
+
+        presenter.startLoadImage(at: indexPath.item) { [weak cell] data in
+            guard let cell = cell else { return }
+
+            DispatchQueue.main.async {
+                guard let image = UIImage(data: data) else { return }
+                cell.update(image: image)
+            }
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         presenter.cancelLoadImage(at: indexPath.item)
     }
