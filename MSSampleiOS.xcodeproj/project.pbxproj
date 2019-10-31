@@ -365,6 +365,14 @@
 			path = __mock__;
 			sourceTree = "<group>";
 		};
+		B073828C236B072E0069A057 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				B023310E2358AB9C00FBC025 /* PhotoCollection */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
 		B0B0686423586483003920BA = {
 			isa = PBXGroup;
 			children = (
@@ -436,8 +444,8 @@
 		B0B068A0235864E8003920BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B073828C236B072E0069A057 /* Photo */,
 				B0B068A1235864F5003920BA /* Launch */,
-				B023310E2358AB9C00FBC025 /* PhotoCollection */,
 			);
 			path = Features;
 			sourceTree = "<group>";
