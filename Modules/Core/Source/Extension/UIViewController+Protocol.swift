@@ -1,5 +1,5 @@
 import UIKit
 
-protocol ViewControllerProtocol: AnyObject {}
+public protocol ViewControllerProtocol: AnyObject {}
 
 extension UIViewController: ViewControllerProtocol {}

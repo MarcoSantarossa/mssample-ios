@@ -1,4 +1,6 @@
-import Core
+@testable import Core
+
+import Foundation
 
 // swiftlint:disable large_tuple
 final class SpyURLSession: URLSessionProtocol {

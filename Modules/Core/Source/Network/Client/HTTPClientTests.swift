@@ -1,4 +1,4 @@
-@testable import MSSampleiOS
+@testable import Core
 
 import XCTest
 

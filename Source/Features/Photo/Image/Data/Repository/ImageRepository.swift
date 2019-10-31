@@ -1,4 +1,4 @@
-import Foundation
+import Core
 
 protocol ImageRepositoryProtocol: AnyObject {
     func getImage(at url: String, completion: @escaping (Image) -> Void)

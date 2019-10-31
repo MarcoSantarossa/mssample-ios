@@ -1,4 +1,4 @@
-@testable import MSSampleiOS
+import Core
 
 final class SpyHTTPClient: HTTPClientProtocol {
 

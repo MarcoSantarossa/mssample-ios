@@ -1,5 +1,6 @@
 @testable import MSSampleiOS
 
+import Core
 import XCTest
 
 final class ImageRepositoryTests: XCTestCase {

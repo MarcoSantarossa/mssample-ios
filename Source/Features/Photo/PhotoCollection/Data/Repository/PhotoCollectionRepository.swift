@@ -1,4 +1,4 @@
-import Foundation
+import Core
 
 protocol PhotoCollectionRepositoryProtocol: AnyObject {
     func getPhotos(completion: @escaping ([PhotoCollectionItem]) -> Void)

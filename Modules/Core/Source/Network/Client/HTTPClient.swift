@@ -1,23 +1,23 @@
 import Foundation
 
-typealias HTTPClientCompletion = (Result<HTTPResponse, HTTPError>) -> Void
+public typealias HTTPClientCompletion = (Result<HTTPResponse, HTTPError>) -> Void
 
-protocol HTTPClientProtocol: AnyObject {
+public protocol HTTPClientProtocol: AnyObject {
     func fetch(with request: HTTPRequest, completion: @escaping HTTPClientCompletion)
 
     func cancel()
 }
 
-final class HTTPClient: HTTPClientProtocol {
+public final class HTTPClient: HTTPClientProtocol {
 
     private let urlSession: URLSessionProtocol
     private var dataTask: URLSessionDataTaskProtocol?
 
-    init(urlSession: URLSessionProtocol = URLSession.shared) {
+    public init(urlSession: URLSessionProtocol = URLSession.shared) {
         self.urlSession = urlSession
     }
 
-    func fetch(with request: HTTPRequest, completion: @escaping HTTPClientCompletion) {
+    public func fetch(with request: HTTPRequest, completion: @escaping HTTPClientCompletion) {
 
         let urlRequest = createURLRequest(from: request)
         dataTask = urlSession.createHTTPTask(with: urlRequest) { data, httpResponse, error in
@@ -51,7 +51,7 @@ final class HTTPClient: HTTPClientProtocol {
         return urlRequest
     }
 
-    func cancel() {
+    public func cancel() {
         dataTask?.cancel()
     }
 
