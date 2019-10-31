@@ -36,6 +36,11 @@
 		B0233150235A061400FBC025 /* ImageInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023314F235A061400FBC025 /* ImageInteractorTests.swift */; };
 		B0233154235A06BF00FBC025 /* SpyImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0233153235A06BF00FBC025 /* SpyImageRepository.swift */; };
 		B0233157235A0A0B00FBC025 /* SpyImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0233156235A0A0B00FBC025 /* SpyImageInteractor.swift */; };
+		B073828F236B07B60069A057 /* PhotoFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B073828E236B07B60069A057 /* PhotoFlow.swift */; };
+		B0738291236B07F20069A057 /* PhotoFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0738290236B07F20069A057 /* PhotoFlowTests.swift */; };
+		B0738296236B09900069A057 /* UINavigationController+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0738295236B09900069A057 /* UINavigationController+Protocol.swift */; };
+		B0738298236B0AC60069A057 /* UIViewController+Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0738297236B0AC60069A057 /* UIViewController+Protocol.swift */; };
+		B073829D236B0D7C0069A057 /* SpyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B073829C236B0D7C0069A057 /* SpyNavigationController.swift */; };
 		B0B0687123586483003920BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0687023586483003920BA /* AppDelegate.swift */; };
 		B0B0687823586485003920BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687723586485003920BA /* Assets.xcassets */; };
 		B0B0687B23586485003920BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687923586485003920BA /* LaunchScreen.storyboard */; };
@@ -96,6 +101,11 @@
 		B023314F235A061400FBC025 /* ImageInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageInteractorTests.swift; sourceTree = "<group>"; };
 		B0233153235A06BF00FBC025 /* SpyImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyImageRepository.swift; sourceTree = "<group>"; };
 		B0233156235A0A0B00FBC025 /* SpyImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyImageInteractor.swift; sourceTree = "<group>"; };
+		B073828E236B07B60069A057 /* PhotoFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFlow.swift; sourceTree = "<group>"; };
+		B0738290236B07F20069A057 /* PhotoFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFlowTests.swift; sourceTree = "<group>"; };
+		B0738295236B09900069A057 /* UINavigationController+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Protocol.swift"; sourceTree = "<group>"; };
+		B0738297236B0AC60069A057 /* UIViewController+Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Protocol.swift"; sourceTree = "<group>"; };
+		B073829C236B0D7C0069A057 /* SpyNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
 		B0B0686D23586483003920BA /* MSSampleiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSSampleiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B0687023586483003920BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B0687723586485003920BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -368,9 +378,27 @@
 		B073828C236B072E0069A057 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				B073828D236B07A60069A057 /* Flow */,
 				B023310E2358AB9C00FBC025 /* PhotoCollection */,
 			);
 			path = Photo;
+			sourceTree = "<group>";
+		};
+		B073828D236B07A60069A057 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				B073828E236B07B60069A057 /* PhotoFlow.swift */,
+				B0738290236B07F20069A057 /* PhotoFlowTests.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		B073829B236B0D600069A057 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				B073829C236B0D7C0069A057 /* SpyNavigationController.swift */,
+			);
+			path = UINavigationController;
 			sourceTree = "<group>";
 		};
 		B0B0686423586483003920BA = {
@@ -398,7 +426,6 @@
 			isa = PBXGroup;
 			children = (
 				B0B1183923586C03004955EA /* Core */,
-				B0B1185023587074004955EA /* Extension */,
 				B0B068A0235864E8003920BA /* Features */,
 				B0B0689F235864BF003920BA /* Main */,
 				B0B0689E2358649B003920BA /* SupportingFiles */,
@@ -444,8 +471,8 @@
 		B0B068A0235864E8003920BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				B073828C236B072E0069A057 /* Photo */,
 				B0B068A1235864F5003920BA /* Launch */,
+				B073828C236B072E0069A057 /* Photo */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -486,6 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				B023312C2358CE1B00FBC025 /* Configuration */,
+				B0B1185023587074004955EA /* Extension */,
 				B02331422359CA7900FBC025 /* Image */,
 				B0B1183A23586C13004955EA /* Network */,
 			);
@@ -505,6 +533,7 @@
 		B0B1184E2358705D004955EA /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				B073829B236B0D600069A057 /* UINavigationController */,
 				B0B118562358743B004955EA /* URLSession */,
 			);
 			path = Mocks;
@@ -513,6 +542,8 @@
 		B0B1185023587074004955EA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B0738295236B09900069A057 /* UINavigationController+Protocol.swift */,
+				B0738297236B0AC60069A057 /* UIViewController+Protocol.swift */,
 				B0B118512358708F004955EA /* URLSession+Protocol.swift */,
 			);
 			path = Extension;
@@ -714,12 +745,15 @@
 				B02331122358ABE400FBC025 /* PhotoCollectionItem.swift in Sources */,
 				B023310D2358A92000FBC025 /* main.swift in Sources */,
 				B02331172358AC4A00FBC025 /* PhotoCollectionRepository.swift in Sources */,
+				B073828F236B07B60069A057 /* PhotoFlow.swift in Sources */,
 				B0B118602358A643004955EA /* HTTPResponse.swift in Sources */,
 				B023313C2359BF0600FBC025 /* PhotoCollectionPresenterProtocol.swift in Sources */,
 				B0B0687123586483003920BA /* AppDelegate.swift in Sources */,
 				B023312E2358CE2800FBC025 /* AppConfiguration.swift in Sources */,
 				B023313A2359BEDB00FBC025 /* PhotoCollectionPresenter.swift in Sources */,
 				B02331472359CAE700FBC025 /* Image.swift in Sources */,
+				B0738296236B09900069A057 /* UINavigationController+Protocol.swift in Sources */,
+				B0738298236B0AC60069A057 /* UIViewController+Protocol.swift in Sources */,
 				B023311F2358ADB200FBC025 /* PhotoCollectionItemDTO.swift in Sources */,
 				B02331492359CB6000FBC025 /* ImageRepository.swift in Sources */,
 				B0B118652358A67D004955EA /* HTTPRequest.swift in Sources */,
@@ -739,6 +773,7 @@
 			files = (
 				B0233150235A061400FBC025 /* ImageInteractorTests.swift in Sources */,
 				B02331192358ACCD00FBC025 /* PhotoCollectionRepositoryTests.swift in Sources */,
+				B073829D236B0D7C0069A057 /* SpyNavigationController.swift in Sources */,
 				B0233154235A06BF00FBC025 /* SpyImageRepository.swift in Sources */,
 				B02331412359C20400FBC025 /* SpyPhotoCollectionInteractor.swift in Sources */,
 				B02331282358CB9100FBC025 /* SpyHTTPClient.swift in Sources */,
@@ -751,6 +786,7 @@
 				B023313E2359C12900FBC025 /* PhotoCollectionPresenterTests.swift in Sources */,
 				B0B1185523587415004955EA /* SpyURLSession.swift in Sources */,
 				B0233157235A0A0B00FBC025 /* SpyImageInteractor.swift in Sources */,
+				B0738291236B07F20069A057 /* PhotoFlowTests.swift in Sources */,
 				B023312B2358CCD600FBC025 /* SpyPhotoCollectionMapper.swift in Sources */,
 				B0B1185A235876AE004955EA /* SpyHTTPURLResponse.swift in Sources */,
 			);
