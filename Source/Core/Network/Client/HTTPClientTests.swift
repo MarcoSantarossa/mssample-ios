@@ -210,6 +210,8 @@ extension HTTPClientTests {
     }
 }
 
+// MARK: - Mock objects
+
 enum DummyError: Error {
     case dummy
 }

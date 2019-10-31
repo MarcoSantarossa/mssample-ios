@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PhotoCollectionCell" customModule="MSSampleiOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="329" height="326"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="329" height="326"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift-logo" translatesAutoresizingMaskIntoConstraints="NO" id="c16-sq-nFE">
+                        <rect key="frame" x="0.0" y="0.0" width="329" height="326"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLL-lb-5p9">
+                        <rect key="frame" x="0.0" y="293" width="329" height="23"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="c16-sq-nFE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0ke-Ht-29U"/>
+                <constraint firstAttribute="bottom" secondItem="zLL-lb-5p9" secondAttribute="bottom" constant="10" id="HyN-Na-0aL"/>
+                <constraint firstAttribute="bottom" secondItem="c16-sq-nFE" secondAttribute="bottom" id="NMN-mo-dF7"/>
+                <constraint firstItem="c16-sq-nFE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Rjj-yL-ngO"/>
+                <constraint firstItem="zLL-lb-5p9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ujb-Cn-ho6"/>
+                <constraint firstAttribute="trailing" secondItem="zLL-lb-5p9" secondAttribute="trailing" id="UmS-Zx-mAX"/>
+                <constraint firstAttribute="trailing" secondItem="c16-sq-nFE" secondAttribute="trailing" id="utN-o0-iPl"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="329" height="326"/>
+            <connections>
+                <outlet property="imageView" destination="c16-sq-nFE" id="PVZ-T7-4T6"/>
+                <outlet property="titleLabel" destination="zLL-lb-5p9" id="b7W-Fy-ibh"/>
+            </connections>
+            <point key="canvasLocation" x="-157.24637681159422" y="173.4375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="swift-logo" width="200" height="180"/>
+    </resources>
+</document>
