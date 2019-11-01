@@ -42,6 +42,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B0302072236C3C7B006582C8"
+               BuildableName = "PhotoTests.xctest"
+               BlueprintName = "PhotoTests"
+               ReferencedContainer = "container:Modules/Photo/Photo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "B0B0688023586485003920BA"
                BuildableName = "UnitTests.xctest"
                BlueprintName = "UnitTests"

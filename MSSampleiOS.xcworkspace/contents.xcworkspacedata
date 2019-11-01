@@ -10,5 +10,8 @@
       <FileRef
          location = "group:Modules/Core/Core.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:Modules/Photo/Photo.xcodeproj">
+      </FileRef>
    </Group>
 </Workspace>
