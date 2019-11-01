@@ -1,4 +1,5 @@
 import Core
+import Photo
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
