@@ -1,11 +1,3 @@
-//
-//  Core.h
-//  Core
-//
-//  Created by Marco Santarossa on 31/10/2019.
-//  Copyright © 2019 Marco Santarossa. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for Core.

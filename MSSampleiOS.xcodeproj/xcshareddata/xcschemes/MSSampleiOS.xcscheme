@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B0302072236C3C7B006582C8"
-               BuildableName = "PhotoTests.xctest"
-               BlueprintName = "PhotoTests"
-               ReferencedContainer = "container:Modules/Photo/Photo.xcodeproj">
+               BuildableName = "AlbumTests.xctest"
+               BlueprintName = "AlbumTests"
+               ReferencedContainer = "container:Modules/Photo/Album.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference

@@ -8,10 +8,10 @@
       location = "container:"
       name = "Modules">
       <FileRef
-         location = "group:Modules/Core/Core.xcodeproj">
+         location = "group:Modules/Album/Album.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Modules/Photo/Photo.xcodeproj">
+         location = "group:Modules/Core/Core.xcodeproj">
       </FileRef>
    </Group>
 </Workspace>

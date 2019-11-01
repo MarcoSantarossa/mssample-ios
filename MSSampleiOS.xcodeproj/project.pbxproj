@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		B023310D2358A92000FBC025 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B023310C2358A92000FBC025 /* main.swift */; };
 		B0302127236C40A9006582C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0302126236C40A9006582C8 /* Assets.xcassets */; };
-		B0302134236C4210006582C8 /* Photo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0302133236C4210006582C8 /* Photo.framework */; };
-		B0302135236C4210006582C8 /* Photo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0302133236C4210006582C8 /* Photo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0302137236C4229006582C8 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0302136236C4229006582C8 /* Core.framework */; };
 		B0302138236C4229006582C8 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0302136236C4229006582C8 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B0A5BC7E236C63DA00938AAF /* Album.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A5BC7D236C63DA00938AAF /* Album.framework */; };
+		B0A5BC7F236C63DA00938AAF /* Album.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0A5BC7D236C63DA00938AAF /* Album.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B0B0687123586483003920BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0687023586483003920BA /* AppDelegate.swift */; };
 		B0B0687B23586485003920BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B0687923586485003920BA /* LaunchScreen.storyboard */; };
 		B0B0689123586485003920BA /* MSSampleiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B0689023586485003920BA /* MSSampleiOSUITests.swift */; };
@@ -35,7 +35,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B0302135236C4210006582C8 /* Photo.framework in Embed Frameworks */,
+				B0A5BC7F236C63DA00938AAF /* Album.framework in Embed Frameworks */,
 				B0302138236C4229006582C8 /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -46,8 +46,8 @@
 /* Begin PBXFileReference section */
 		B023310C2358A92000FBC025 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B0302126236C40A9006582C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B0302133236C4210006582C8 /* Photo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Photo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0302136236C4229006582C8 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0A5BC7D236C63DA00938AAF /* Album.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Album.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B0686D23586483003920BA /* MSSampleiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MSSampleiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B0687023586483003920BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B0687A23586485003920BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0302134236C4210006582C8 /* Photo.framework in Frameworks */,
+				B0A5BC7E236C63DA00938AAF /* Album.framework in Frameworks */,
 				B0302137236C4229006582C8 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,8 +88,8 @@
 		B0B0686423586483003920BA = {
 			isa = PBXGroup;
 			children = (
+				B0A5BC7D236C63DA00938AAF /* Album.framework */,
 				B0302136236C4229006582C8 /* Core.framework */,
-				B0302133236C4210006582C8 /* Photo.framework */,
 				B0B0686E23586483003920BA /* Products */,
 				B0302125236C40A9006582C8 /* Resources */,
 				B0B0686F23586483003920BA /* Source */,

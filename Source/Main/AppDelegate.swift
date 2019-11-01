@@ -1,5 +1,5 @@
+import Album
 import Core
-import Photo
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -8,16 +8,16 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let navController = UINavigationController()
-        startMainFlow(in: navController)
+        startMainRouting(in: navController)
 
         window = presentNewMainWindow(root: navController)
 
         return true
     }
 
-    private func startMainFlow(in parent: NavigationControllerProtocol) {
-        let mainFlow = PhotoFlow(parent: parent)
-        mainFlow.presentCollection()
+    private func startMainRouting(in parent: NavigationControllerProtocol) {
+        let mainRouter = AlbumRouter(parent: parent)
+        mainRouter.presentCollection()
     }
 
     private func presentNewMainWindow(root: UINavigationController) -> UIWindow {
