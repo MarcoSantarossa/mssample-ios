@@ -134,7 +134,7 @@
 		B030206C236C3C7B006582C8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B0302085236C3CEC006582C8 /* Common */,
+				B0302085236C3CEC006582C8 /* Shared */,
 				B03020A3236C3D7A006582C8 /* Features */,
 				B0302114236C3E23006582C8 /* Flow */,
 				B0302084236C3C8B006582C8 /* SupportingFiles */,
@@ -160,12 +160,12 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		B0302085236C3CEC006582C8 /* Common */ = {
+		B0302085236C3CEC006582C8 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				B0302086236C3CEC006582C8 /* Image */,
 			);
-			path = Common;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		B0302086236C3CEC006582C8 /* Image */ = {
@@ -250,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				B03020D7236C3DA7006582C8 /* PhotoCollection */,
+				B0B4BF40236C44C50065EEEF /* PhotoDetails */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -431,6 +432,21 @@
 				B0302123236C4081006582C8 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B0B4BF40236C44C50065EEEF /* PhotoDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B0B4BF41236C467A0065EEEF /* BusinessLogic */,
+			);
+			path = PhotoDetails;
+			sourceTree = "<group>";
+		};
+		B0B4BF41236C467A0065EEEF /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
