@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00698E8236C7A47001C2436 /* AlbumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00698E7236C7A47001C2436 /* AlbumDTO.swift */; };
+		B00698EA236C7A61001C2436 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00698E9236C7A61001C2436 /* PhotoDTO.swift */; };
+		B00698ED236C7B69001C2436 /* AlbumMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00698EC236C7B69001C2436 /* AlbumMapper.swift */; };
+		B00698F0236C7BFF001C2436 /* AlbumMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00698EF236C7BFF001C2436 /* AlbumMapperTests.swift */; };
+		B00698F3236C920A001C2436 /* SpyAlbumMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00698F2236C920A001C2436 /* SpyAlbumMapper.swift */; };
+		B00CABDD2370615C00941C56 /* AlbumInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CABDC2370615C00941C56 /* AlbumInteractor.swift */; };
+		B00CABDF2370616700941C56 /* AlbumInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CABDE2370616700941C56 /* AlbumInteractorTests.swift */; };
+		B00CABE2237062CF00941C56 /* SpyAlbumRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CABE1237062CF00941C56 /* SpyAlbumRepository.swift */; };
 		B0302074236C3C7B006582C8 /* Album.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B030206A236C3C7B006582C8 /* Album.framework */; };
 		B030207B236C3C7B006582C8 /* Album.h in Headers */ = {isa = PBXBuildFile; fileRef = B030206D236C3C7B006582C8 /* Album.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0302095236C3CEC006582C8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0302089236C3CEC006582C8 /* Image.swift */; };
@@ -40,6 +48,10 @@
 		B0302120236C3F64006582C8 /* SpyHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030211D236C3F64006582C8 /* SpyHTTPClient.swift */; };
 		B0302121236C3F64006582C8 /* SpyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030211F236C3F64006582C8 /* SpyNavigationController.swift */; };
 		B0302124236C4081006582C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0302123236C4081006582C8 /* Assets.xcassets */; };
+		B0A5BC84236C6A2200938AAF /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A5BC83236C6A2200938AAF /* Album.swift */; };
+		B0A5BC86236C710400938AAF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A5BC85236C710400938AAF /* Photo.swift */; };
+		B0A5BC8A236C715C00938AAF /* AlbumRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A5BC89236C715C00938AAF /* AlbumRepository.swift */; };
+		B0A5BC8C236C71EF00938AAF /* AlbumRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A5BC8B236C71EF00938AAF /* AlbumRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +65,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B00698E7236C7A47001C2436 /* AlbumDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDTO.swift; sourceTree = "<group>"; };
+		B00698E9236C7A61001C2436 /* PhotoDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
+		B00698EC236C7B69001C2436 /* AlbumMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMapper.swift; sourceTree = "<group>"; };
+		B00698EF236C7BFF001C2436 /* AlbumMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMapperTests.swift; sourceTree = "<group>"; };
+		B00698F2236C920A001C2436 /* SpyAlbumMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyAlbumMapper.swift; sourceTree = "<group>"; };
+		B00CABDC2370615C00941C56 /* AlbumInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInteractor.swift; sourceTree = "<group>"; };
+		B00CABDE2370616700941C56 /* AlbumInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInteractorTests.swift; sourceTree = "<group>"; };
+		B00CABE1237062CF00941C56 /* SpyAlbumRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyAlbumRepository.swift; sourceTree = "<group>"; };
 		B030206A236C3C7B006582C8 /* Album.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Album.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B030206D236C3C7B006582C8 /* Album.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		B030206E236C3C7B006582C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +109,10 @@
 		B030211D236C3F64006582C8 /* SpyHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyHTTPClient.swift; sourceTree = "<group>"; };
 		B030211F236C3F64006582C8 /* SpyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
 		B0302123236C4081006582C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0A5BC83236C6A2200938AAF /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		B0A5BC85236C710400938AAF /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		B0A5BC89236C715C00938AAF /* AlbumRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRepository.swift; sourceTree = "<group>"; };
+		B0A5BC8B236C71EF00938AAF /* AlbumRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +135,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B00698E6236C7A47001C2436 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				B00698E7236C7A47001C2436 /* AlbumDTO.swift */,
+				B00698E9236C7A61001C2436 /* PhotoDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		B00698EB236C7B5B001C2436 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				B00698F1236C91F9001C2436 /* __mock__ */,
+				B00698EC236C7B69001C2436 /* AlbumMapper.swift */,
+				B00698EF236C7BFF001C2436 /* AlbumMapperTests.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		B00698F1236C91F9001C2436 /* __mock__ */ = {
+			isa = PBXGroup;
+			children = (
+				B00698F2236C920A001C2436 /* SpyAlbumMapper.swift */,
+			);
+			path = __mock__;
+			sourceTree = "<group>";
+		};
+		B00CABDB2370615200941C56 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				B00CABDC2370615C00941C56 /* AlbumInteractor.swift */,
+				B00CABDE2370616700941C56 /* AlbumInteractorTests.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B00CABE0237062BA00941C56 /* __mock__ */ = {
+			isa = PBXGroup;
+			children = (
+				B00CABE1237062CF00941C56 /* SpyAlbumRepository.swift */,
+			);
+			path = __mock__;
+			sourceTree = "<group>";
+		};
 		B0302060236C3C7B006582C8 = {
 			isa = PBXGroup;
 			children = (
@@ -322,8 +390,8 @@
 		B03020E3236C3DA7006582C8 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				B03020E4236C3DA7006582C8 /* PhotoCollectionRepository.swift */,
 				B03020E5236C3DA7006582C8 /* __mock__ */,
+				B03020E4236C3DA7006582C8 /* PhotoCollectionRepository.swift */,
 				B03020E7236C3DA7006582C8 /* PhotoCollectionRepositoryTests.swift */,
 			);
 			path = Repository;
@@ -438,8 +506,48 @@
 		B0A5BC80236C656900938AAF /* Album */ = {
 			isa = PBXGroup;
 			children = (
+				B0A5BC81236C6A0F00938AAF /* BusinessLogic */,
+				B0A5BC87236C714800938AAF /* Data */,
 			);
 			path = Album;
+			sourceTree = "<group>";
+		};
+		B0A5BC81236C6A0F00938AAF /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				B00CABDB2370615200941C56 /* Interactor */,
+				B0A5BC82236C6A1800938AAF /* Model */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		B0A5BC82236C6A1800938AAF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0A5BC83236C6A2200938AAF /* Album.swift */,
+				B0A5BC85236C710400938AAF /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B0A5BC87236C714800938AAF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B00698E6236C7A47001C2436 /* DTO */,
+				B00698EB236C7B5B001C2436 /* Mapper */,
+				B0A5BC88236C714D00938AAF /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B0A5BC88236C714D00938AAF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				B00CABE0237062BA00941C56 /* __mock__ */,
+				B0A5BC89236C715C00938AAF /* AlbumRepository.swift */,
+				B0A5BC8B236C71EF00938AAF /* AlbumRepositoryTests.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		B0B4BF40236C44C50065EEEF /* PhotoDetails */ = {
@@ -569,15 +677,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0302096236C3CEC006582C8 /* ImageInteractor.swift in Sources */,
+				B00698E8236C7A47001C2436 /* AlbumDTO.swift in Sources */,
+				B0A5BC8A236C715C00938AAF /* AlbumRepository.swift in Sources */,
 				B03020FA236C3DA7006582C8 /* PhotoCollectionInteractor.swift in Sources */,
 				B0302107236C3DA7006582C8 /* PhotoCollectionCell.swift in Sources */,
 				B03020FD236C3DA7006582C8 /* PhotoCollectionRepository.swift in Sources */,
+				B00698EA236C7A61001C2436 /* PhotoDTO.swift in Sources */,
 				B0302103236C3DA7006582C8 /* PhotoCollectionPresenterProtocol.swift in Sources */,
+				B0A5BC84236C6A2200938AAF /* Album.swift in Sources */,
 				B0302101236C3DA7006582C8 /* PhotoCollectionMapper.swift in Sources */,
 				B03020FC236C3DA7006582C8 /* PhotoCollectionItemDTO.swift in Sources */,
+				B00698ED236C7B69001C2436 /* AlbumMapper.swift in Sources */,
 				B03020F8236C3DA7006582C8 /* PhotoCollectionItem.swift in Sources */,
+				B0A5BC86236C710400938AAF /* Photo.swift in Sources */,
 				B0302106236C3DA7006582C8 /* PhotoCollectionViewController.swift in Sources */,
 				B0302105236C3DA7006582C8 /* PhotoCollectionPresenter.swift in Sources */,
+				B00CABDD2370615C00941C56 /* AlbumInteractor.swift in Sources */,
 				B0302095236C3CEC006582C8 /* Image.swift in Sources */,
 				B0302117236C3E23006582C8 /* AlbumRouter.swift in Sources */,
 				B030209B236C3CEC006582C8 /* ImageRepository.swift in Sources */,
@@ -592,13 +707,18 @@
 				B030210A236C3DB5006582C8 /* PhotoCollectionInteractorTests.swift in Sources */,
 				B030209D236C3CF7006582C8 /* ImageRepositoryTests.swift in Sources */,
 				B0302113236C3DFE006582C8 /* SpyPhotoCollectionMapper.swift in Sources */,
+				B00698F3236C920A001C2436 /* SpyAlbumMapper.swift in Sources */,
 				B0302120236C3F64006582C8 /* SpyHTTPClient.swift in Sources */,
 				B030210C236C3DBB006582C8 /* PhotoCollectionMapperTests.swift in Sources */,
 				B030209E236C3CFE006582C8 /* SpyImageInteractor.swift in Sources */,
 				B030209F236C3D02006582C8 /* SpyImageRepository.swift in Sources */,
+				B0A5BC8C236C71EF00938AAF /* AlbumRepositoryTests.swift in Sources */,
 				B030209C236C3CF4006582C8 /* ImageInteractorTests.swift in Sources */,
+				B00698F0236C7BFF001C2436 /* AlbumMapperTests.swift in Sources */,
 				B030211A236C3E70006582C8 /* AlbumRouterTests.swift in Sources */,
 				B0302121236C3F64006582C8 /* SpyNavigationController.swift in Sources */,
+				B00CABE2237062CF00941C56 /* SpyAlbumRepository.swift in Sources */,
+				B00CABDF2370616700941C56 /* AlbumInteractorTests.swift in Sources */,
 				B0302112236C3DFB006582C8 /* SpyPhotoCollectionRepository.swift in Sources */,
 				B030210D236C3DBE006582C8 /* PhotoCollectionPresenterTests.swift in Sources */,
 				B0302111236C3DF7006582C8 /* SpyPhotoCollectionInteractor.swift in Sources */,

@@ -34,21 +34,25 @@ final class PhotoCollectionRepositoryTests: XCTestCase {
 // MARK: - getPhotos
 extension PhotoCollectionRepositoryTests {
     func test_getPhotos_callsHTTPClient() {
+        httpClient.forcedFetchResult.append(.failure(.dataNotAvailable))
+
         sut.getPhotos { _ in }
 
         XCTAssertEqual(httpClient.fetchCallsCount, 1)
     }
 
     func test_getPhotos_callsHTTPClientWithRightArgs() {
+        httpClient.forcedFetchResult.append(.failure(.dataNotAvailable))
+
         sut.getPhotos { _ in }
 
-        XCTAssertEqual(httpClient.fetchRequestArg.url, "https://jsonplaceholder.typicode.com/photos?albumId=1")
-        XCTAssertEqual(httpClient.fetchRequestArg.method, .GET)
-        XCTAssertNil(httpClient.fetchRequestArg.body, "https://jsonplaceholder.typicode.com/photos?albumId=1")
+        XCTAssertEqual(httpClient.fetchRequestsArg[0].url, "https://jsonplaceholder.typicode.com/photos?albumId=1")
+        XCTAssertEqual(httpClient.fetchRequestsArg[0].method, .GET)
+        XCTAssertNil(httpClient.fetchRequestsArg[0].body)
     }
 
     func test_getPhotos_httpClientReturnsError_returnsEmptyItems() {
-        httpClient.forcedFetchResult = .failure(.dataNotAvailable)
+        httpClient.forcedFetchResult.append(.failure(.dataNotAvailable))
         var itemsArg: [PhotoCollectionItem]!
 
         sut.getPhotos { itemsArg = $0 }
@@ -57,7 +61,7 @@ extension PhotoCollectionRepositoryTests {
     }
 
     func test_getPhotos_httpClientReturnsWithoutData_returnsEmptyItems() {
-        httpClient.forcedFetchResult = .success(HTTPResponse(statusCode: 200, body: nil))
+        httpClient.forcedFetchResult.append(.success(HTTPResponse(statusCode: 200, body: nil)))
         var itemsArg: [PhotoCollectionItem]!
 
         sut.getPhotos { itemsArg = $0 }
@@ -67,7 +71,7 @@ extension PhotoCollectionRepositoryTests {
 
     func test_getPhotos_httpClientReturnsInvalidData_returnsEmptyItems() {
         let data = "test".data(using: .utf8)
-        httpClient.forcedFetchResult = .success(HTTPResponse(statusCode: 200, body: data))
+        httpClient.forcedFetchResult.append(.success(HTTPResponse(statusCode: 200, body: data)))
         var itemsArg: [PhotoCollectionItem]!
 
         sut.getPhotos { itemsArg = $0 }
@@ -77,7 +81,7 @@ extension PhotoCollectionRepositoryTests {
 
     func test_getPhotos_httpClientReturnsInvalidData_doesNotCallMapper() {
         let data = "test".data(using: .utf8)
-        httpClient.forcedFetchResult = .success(HTTPResponse(statusCode: 200, body: data))
+        httpClient.forcedFetchResult.append(.success(HTTPResponse(statusCode: 200, body: data)))
 
         sut.getPhotos { _ in }
 
@@ -85,7 +89,8 @@ extension PhotoCollectionRepositoryTests {
     }
 
     func test_getPhotos_httpClientReturnsValidData_callsMapper() {
-        httpClient.forcedFetchResult = .success(HTTPResponse(statusCode: 200, body: validResponseData))
+        httpClient.forcedFetchResult.append(.success(HTTPResponse(statusCode: 200, body: validResponseData)))
+
         mapper.forcedMap = []
 
         sut.getPhotos { _ in }
@@ -94,7 +99,7 @@ extension PhotoCollectionRepositoryTests {
     }
 
     func test_getPhotos_httpClientReturnsValidData_callsMapperWithRightArgs() {
-        httpClient.forcedFetchResult = .success(HTTPResponse(statusCode: 200, body: validResponseData))
+        httpClient.forcedFetchResult.append(.success(HTTPResponse(statusCode: 200, body: validResponseData)))
         mapper.forcedMap = []
 
         sut.getPhotos { _ in }
@@ -112,7 +117,7 @@ extension PhotoCollectionRepositoryTests {
     }
 
     func test_getPhotos_mapperReturnsArray_returnsArray() {
-        httpClient.forcedFetchResult = .success(HTTPResponse(statusCode: 200, body: validResponseData))
+        httpClient.forcedFetchResult.append(.success(HTTPResponse(statusCode: 200, body: validResponseData)))
         mapper.forcedMap = [.init(id: 1, title: "t1", thumbnailUrl: "th1")]
         var itemsArg: [PhotoCollectionItem]!
 
