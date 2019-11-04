@@ -1,5 +1,6 @@
 protocol AlbumInteractorProtocol: AnyObject {
     func getAlbum(completion: @escaping (Album?) -> Void)
+    func getPhoto(id: Int, completion: @escaping (Photo?) -> Void)
 }
 
 final class AlbumInteractor: AlbumInteractorProtocol {
@@ -12,6 +13,10 @@ final class AlbumInteractor: AlbumInteractorProtocol {
 
     func getAlbum(completion: @escaping (Album?) -> Void) {
         dependencies.repo.getAlbum(completion: completion)
+    }
+
+    func getPhoto(id: Int, completion: @escaping (Photo?) -> Void) {
+        dependencies.repo.getPhoto(id: id, completion: completion)
     }
 }
 

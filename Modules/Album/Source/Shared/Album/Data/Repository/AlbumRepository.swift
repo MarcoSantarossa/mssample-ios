@@ -2,6 +2,7 @@ import Core
 
 protocol AlbumRepositoryProtocol: AnyObject {
     func getAlbum(completion: @escaping (Album?) -> Void)
+    func getPhoto(id: Int, completion: @escaping (Photo?) -> Void)
 }
 
 final class AlbumRepository: AlbumRepositoryProtocol {
@@ -49,6 +50,28 @@ final class AlbumRepository: AlbumRepositoryProtocol {
                 completion(photoDTOs)
             } catch {
                 completion([])
+            }
+        }
+    }
+
+    func getPhoto(id: Int, completion: @escaping (Photo?) -> Void) {
+        let request = HTTPRequest(url: "\(AppConfiguration.apiBaseUrl)/photos/\(id)", method: .GET)
+
+        dependencies.httpClient.fetch(with: request) { [weak self] result in
+            guard let self = self,
+                case .success(let response) = result,
+                let body = response.body else {
+                    completion(nil)
+                    return
+            }
+
+            do {
+                let photoDTO = try JSONDecoder().decode(PhotoDTO.self, from: body)
+                let photo = self.dependencies.mapper.map(photoDTO: photoDTO)
+                completion(photo)
+
+            } catch {
+                completion(nil)
             }
         }
     }

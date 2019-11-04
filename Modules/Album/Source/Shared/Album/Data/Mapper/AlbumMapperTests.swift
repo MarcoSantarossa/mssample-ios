@@ -29,9 +29,9 @@ final class AlbumMapperTests: XCTestCase {
     }
 }
 
-// MARK: - map
+// MARK: - map(albumDTO:photoDTOs:)
 extension AlbumMapperTests {
-    func test_map_emptyPhotos_retunsAlbumWithoutPhotos() {
+    func test_mapAlbumPhotoDTOs_emptyPhotos_retunsAlbumWithoutPhotos() {
         let result = sut.map(albumDTO: createAlbumDTO(), photoDTOs: [])
 
         XCTAssertEqual(result.id, 1)
@@ -39,7 +39,7 @@ extension AlbumMapperTests {
         XCTAssertEqual(result.photos.count, 0)
     }
 
-    func test_map_withPhotos_retunsAlbumWithPhotos() {
+    func test_mapAlbumPhotoDTOs_withPhotos_retunsAlbumWithPhotos() {
         let result = sut.map(albumDTO: createAlbumDTO(), photoDTOs: createPhotoDTOs(count: 2))
 
         XCTAssertEqual(result.id, 1)
@@ -53,5 +53,19 @@ extension AlbumMapperTests {
         XCTAssertEqual(result.photos[1].title, "photo 2")
         XCTAssertEqual(result.photos[1].url, "photo url 2")
         XCTAssertEqual(result.photos[1].thumbnailUrl, "thumb photo url 2")
+    }
+}
+
+// MARK: - map(photoDTO:)
+extension AlbumMapperTests {
+    func test_mapPhotoDTO_retunsPhoto() {
+        let photoDTO = createPhotoDTOs(count: 1)[0]
+
+        let result: Photo = sut.map(photoDTO: photoDTO)
+
+        XCTAssertEqual(result.id, 1)
+        XCTAssertEqual(result.title, "photo 1")
+        XCTAssertEqual(result.url, "photo url 1")
+        XCTAssertEqual(result.thumbnailUrl, "thumb photo url 1")
     }
 }

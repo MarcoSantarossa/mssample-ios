@@ -55,6 +55,18 @@ final class AlbumRepositoryTests: XCTestCase {
         """.data(using: .utf8)!
     }
 
+    private func createPhotoJSONData() -> Data {
+        return """
+        {
+            "albumId": 1,
+            "id": 2,
+            "title": "photo 2",
+            "url": "https://via.placeholder.com/600/771796",
+            "thumbnailUrl": "https://via.placeholder.com/150/771796"
+        }
+        """.data(using: .utf8)!
+    }
+
     private func createAlbum() -> Album {
         return Album(id: 1, title: "Album 1", photos: [])
     }
@@ -254,5 +266,96 @@ extension AlbumRepositoryTests {
         XCTAssertEqual(mapper.mapPhotoDTOs[1].title, "photo 2")
         XCTAssertEqual(mapper.mapPhotoDTOs[1].url, "https://via.placeholder.com/600/771796")
         XCTAssertEqual(mapper.mapPhotoDTOs[1].thumbnailUrl, "https://via.placeholder.com/150/771796")
+    }
+}
+
+// MARK: - getPhoto
+extension AlbumRepositoryTests {
+    func test_getPhoto_callsHTTPClient() {
+        httpClient.forcedFetchResult.append(.failure(.dataNotAvailable))
+
+        sut.getPhoto(id: 10) { _ in }
+
+        XCTAssertEqual(httpClient.fetchCallsCount, 1)
+    }
+
+    func test_getPhoto_callsHTTPClientWithRightArgs() {
+        httpClient.forcedFetchResult.append(.failure(.dataNotAvailable))
+
+        sut.getPhoto(id: 10) { _ in }
+
+        XCTAssertEqual(httpClient.fetchRequestsArg[0].url, "https://jsonplaceholder.typicode.com/photos/10")
+        XCTAssertEqual(httpClient.fetchRequestsArg[0].method, .GET)
+        XCTAssertNil(httpClient.fetchRequestsArg[0].body)
+    }
+
+    func test_getPhoto_error_callsCompletion() {
+        httpClient.forcedFetchResult.append(.failure(.dataNotAvailable))
+        var completionCallsCount = 0
+
+        sut.getPhoto(id: 10) { _ in completionCallsCount += 1 }
+
+        XCTAssertEqual(completionCallsCount, 1)
+    }
+
+    func test_getPhoto_error_callsCompletionWithNil() {
+        httpClient.forcedFetchResult.append(.failure(.dataNotAvailable))
+        var completionArg: Photo?
+
+        sut.getPhoto(id: 10) { completionArg = $0 }
+
+        XCTAssertNil(completionArg)
+    }
+
+    func test_getPhoto_invalidData_callsCompletion() {
+        httpClient.forcedFetchResult.append(.success(.init(statusCode: 200, body: "test".data(using: .utf8))))
+        var completionCallsCount = 0
+
+        sut.getPhoto(id: 10) { _ in completionCallsCount += 1 }
+
+        XCTAssertEqual(completionCallsCount, 1)
+    }
+
+    func test_getPhoto_invalidData_callsCompletionWithNil() {
+        httpClient.forcedFetchResult.append(.success(.init(statusCode: 200, body: "test".data(using: .utf8))))
+        var completionArg: Photo?
+
+        sut.getPhoto(id: 10) { completionArg = $0 }
+
+        XCTAssertNil(completionArg)
+    }
+
+    func test_getPhoto_validData_callsMapper() {
+        httpClient.forcedFetchResult.append(.success(.init(statusCode: 200, body: createPhotoJSONData())))
+        mapper.forcedMapPhotoResult = Photo(id: 1, title: "p1", url: "pu1", thumbnailUrl: "ptu1")
+
+        sut.getPhoto(id: 10) { _ in }
+
+        XCTAssertEqual(mapper.mapPhotoCallsCount, 1)
+    }
+
+    func test_getPhoto_validData_callsMapperWithRightArgs() {
+        httpClient.forcedFetchResult.append(.success(.init(statusCode: 200, body: createPhotoJSONData())))
+        mapper.forcedMapPhotoResult = Photo(id: 1, title: "p1", url: "pu1", thumbnailUrl: "ptu1")
+
+        sut.getPhoto(id: 10) { _ in }
+
+        XCTAssertEqual(mapper.mapPhotoDTOArg.id, 2)
+        XCTAssertEqual(mapper.mapPhotoDTOArg.title, "photo 2")
+        XCTAssertEqual(mapper.mapPhotoDTOArg.url, "https://via.placeholder.com/600/771796")
+        XCTAssertEqual(mapper.mapPhotoDTOArg.thumbnailUrl, "https://via.placeholder.com/150/771796")
+    }
+
+    func test_getPhoto_completionWithMapResult() {
+        httpClient.forcedFetchResult.append(.success(.init(statusCode: 200, body: createPhotoJSONData())))
+        mapper.forcedMapPhotoResult = Photo(id: 1, title: "p1", url: "pu1", thumbnailUrl: "ptu1")
+        var completionArg: Photo!
+
+        sut.getPhoto(id: 10) { completionArg = $0 }
+
+        XCTAssertEqual(completionArg.id, 1)
+        XCTAssertEqual(completionArg.title, "p1")
+        XCTAssertEqual(completionArg.url, "pu1")
+        XCTAssertEqual(completionArg.thumbnailUrl, "ptu1")
     }
 }
