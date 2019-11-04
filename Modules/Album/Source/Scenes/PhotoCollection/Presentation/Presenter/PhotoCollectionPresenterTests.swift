@@ -5,13 +5,13 @@ import XCTest
 final class PhotoCollectionPresenterTests: XCTestCase {
 
     private var sut: PhotoCollectionPresenter!
-    private var interactor: SpyPhotoCollectionInteractor!
+    private var interactor: SpyAlbumInteractor!
     private var imageInteractors = [String: SpyImageInteractor]()
 
     override func setUp() {
         super.setUp()
 
-        interactor = SpyPhotoCollectionInteractor()
+        interactor = SpyAlbumInteractor()
         sut = PhotoCollectionPresenter(dependencies: .init(interactor: interactor, imageInteractorType: SpyImageInteractor.self))
     }
 
@@ -25,12 +25,30 @@ final class PhotoCollectionPresenterTests: XCTestCase {
     }
 
     private func loadItems() {
-        interactor.forcedGetPhotosItemsArg = [
-            .init(id: 1, title: "t1", thumbnailUrl: "th1"),
-            .init(id: 2, title: "t2", thumbnailUrl: "th2"),
-            .init(id: 3, title: "t3", thumbnailUrl: "th3")
-        ]
+        interactor.getAlbumForcedResult = Album(id: 10, title: "a1", photos: [
+            Photo(id: 1, title: "ph 1", url: "url 1", thumbnailUrl: "th url 1"),
+            Photo(id: 2, title: "ph 2", url: "url 2", thumbnailUrl: "th url 2"),
+            Photo(id: 3, title: "ph 3", url: "url 3", thumbnailUrl: "th url 3")
+
+            ])
         sut.viewDidLoad()
+    }
+}
+
+// MARK: - mainTitle
+extension PhotoCollectionPresenterTests {
+    func test_mainTitle_beforeLoadingItems_returnsDefault() {
+        let result = sut.mainTitle
+
+        XCTAssertEqual(result, "Not available")
+    }
+
+    func test_mainTitle_afterLoadingItems_returnsExpectedValue() {
+        loadItems()
+
+        let result = sut.mainTitle
+
+        XCTAssertEqual(result, "Album: a1")
     }
 }
 
@@ -39,7 +57,7 @@ extension PhotoCollectionPresenterTests {
     func test_viewDidLoad_callsInteractor() {
         sut.viewDidLoad()
 
-        XCTAssertEqual(interactor.getPhotosCallsCount, 1)
+        XCTAssertEqual(interactor.getAlbumCallsCount, 1)
     }
 }
 
@@ -98,7 +116,7 @@ extension PhotoCollectionPresenterTests {
 
         let result = sut.title(at: 1)
 
-        XCTAssertEqual(result, "t2")
+        XCTAssertEqual(result, "Ph")
     }
 }
 
@@ -131,7 +149,7 @@ extension PhotoCollectionPresenterTests {
 
         sut.startLoadImage(at: 1) { _ in }
 
-        XCTAssertEqual(SpyImageInteractor.shared.getImageUrlArg, "th2")
+        XCTAssertEqual(SpyImageInteractor.shared.getImageUrlArg, "th url 2")
     }
 
     func test_startLoadImage_completionUsesInteractorImage() {

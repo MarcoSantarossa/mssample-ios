@@ -19,6 +19,7 @@ final class PhotoCollectionViewController: UIViewController {
             guard let self = self else { return }
 
             DispatchQueue.main.async {
+                self.title = self.presenter.mainTitle
                 self.collectionView.reloadData()
             }
         }
@@ -31,14 +32,9 @@ final class PhotoCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupViewTitle()
         registerCollectionCell()
 
         presenter.viewDidLoad()
-    }
-
-    private func setupViewTitle() {
-        title = "Photos"
     }
 
     private func registerCollectionCell() {

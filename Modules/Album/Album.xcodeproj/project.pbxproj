@@ -15,6 +15,7 @@
 		B00CABDD2370615C00941C56 /* AlbumInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CABDC2370615C00941C56 /* AlbumInteractor.swift */; };
 		B00CABDF2370616700941C56 /* AlbumInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CABDE2370616700941C56 /* AlbumInteractorTests.swift */; };
 		B00CABE2237062CF00941C56 /* SpyAlbumRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CABE1237062CF00941C56 /* SpyAlbumRepository.swift */; };
+		B00CABE523707B1800941C56 /* SpyAlbumInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00CABE423707B1800941C56 /* SpyAlbumInteractor.swift */; };
 		B0302074236C3C7B006582C8 /* Album.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B030206A236C3C7B006582C8 /* Album.framework */; };
 		B030207B236C3C7B006582C8 /* Album.h in Headers */ = {isa = PBXBuildFile; fileRef = B030206D236C3C7B006582C8 /* Album.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0302095236C3CEC006582C8 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0302089236C3CEC006582C8 /* Image.swift */; };
@@ -25,24 +26,13 @@
 		B030209E236C3CFE006582C8 /* SpyImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030208E236C3CEC006582C8 /* SpyImageInteractor.swift */; };
 		B030209F236C3D02006582C8 /* SpyImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0302093236C3CEC006582C8 /* SpyImageRepository.swift */; };
 		B03020A2236C3D2C006582C8 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03020A1236C3D2C006582C8 /* Core.framework */; };
-		B03020F8236C3DA7006582C8 /* PhotoCollectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020DA236C3DA7006582C8 /* PhotoCollectionItem.swift */; };
-		B03020FA236C3DA7006582C8 /* PhotoCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020DE236C3DA7006582C8 /* PhotoCollectionInteractor.swift */; };
-		B03020FC236C3DA7006582C8 /* PhotoCollectionItemDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020E2236C3DA7006582C8 /* PhotoCollectionItemDTO.swift */; };
-		B03020FD236C3DA7006582C8 /* PhotoCollectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020E4236C3DA7006582C8 /* PhotoCollectionRepository.swift */; };
-		B0302101236C3DA7006582C8 /* PhotoCollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020EB236C3DA7006582C8 /* PhotoCollectionMapper.swift */; };
 		B0302103236C3DA7006582C8 /* PhotoCollectionPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020EF236C3DA7006582C8 /* PhotoCollectionPresenterProtocol.swift */; };
 		B0302105236C3DA7006582C8 /* PhotoCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020F1236C3DA7006582C8 /* PhotoCollectionPresenter.swift */; };
 		B0302106236C3DA7006582C8 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020F3236C3DA7006582C8 /* PhotoCollectionViewController.swift */; };
 		B0302107236C3DA7006582C8 /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020F5236C3DA7006582C8 /* PhotoCollectionCell.swift */; };
 		B0302108236C3DA7006582C8 /* PhotoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03020F6236C3DA7006582C8 /* PhotoCollectionCell.xib */; };
 		B0302109236C3DA7006582C8 /* PhotoCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03020F7236C3DA7006582C8 /* PhotoCollectionViewController.xib */; };
-		B030210A236C3DB5006582C8 /* PhotoCollectionInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020DF236C3DA7006582C8 /* PhotoCollectionInteractorTests.swift */; };
-		B030210B236C3DB8006582C8 /* PhotoCollectionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020E7236C3DA7006582C8 /* PhotoCollectionRepositoryTests.swift */; };
-		B030210C236C3DBB006582C8 /* PhotoCollectionMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020EC236C3DA7006582C8 /* PhotoCollectionMapperTests.swift */; };
 		B030210D236C3DBE006582C8 /* PhotoCollectionPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020F0236C3DA7006582C8 /* PhotoCollectionPresenterTests.swift */; };
-		B0302111236C3DF7006582C8 /* SpyPhotoCollectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020DD236C3DA7006582C8 /* SpyPhotoCollectionInteractor.swift */; };
-		B0302112236C3DFB006582C8 /* SpyPhotoCollectionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020E6236C3DA7006582C8 /* SpyPhotoCollectionRepository.swift */; };
-		B0302113236C3DFE006582C8 /* SpyPhotoCollectionMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03020EA236C3DA7006582C8 /* SpyPhotoCollectionMapper.swift */; };
 		B0302117236C3E23006582C8 /* AlbumRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0302115236C3E23006582C8 /* AlbumRouter.swift */; };
 		B030211A236C3E70006582C8 /* AlbumRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0302116236C3E23006582C8 /* AlbumRouterTests.swift */; };
 		B0302120236C3F64006582C8 /* SpyHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B030211D236C3F64006582C8 /* SpyHTTPClient.swift */; };
@@ -73,6 +63,7 @@
 		B00CABDC2370615C00941C56 /* AlbumInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInteractor.swift; sourceTree = "<group>"; };
 		B00CABDE2370616700941C56 /* AlbumInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInteractorTests.swift; sourceTree = "<group>"; };
 		B00CABE1237062CF00941C56 /* SpyAlbumRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyAlbumRepository.swift; sourceTree = "<group>"; };
+		B00CABE423707B1800941C56 /* SpyAlbumInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyAlbumInteractor.swift; sourceTree = "<group>"; };
 		B030206A236C3C7B006582C8 /* Album.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Album.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B030206D236C3C7B006582C8 /* Album.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Album.h; sourceTree = "<group>"; };
 		B030206E236C3C7B006582C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,17 +77,6 @@
 		B0302093236C3CEC006582C8 /* SpyImageRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyImageRepository.swift; sourceTree = "<group>"; };
 		B0302094236C3CEC006582C8 /* ImageRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		B03020A1236C3D2C006582C8 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B03020DA236C3DA7006582C8 /* PhotoCollectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionItem.swift; sourceTree = "<group>"; };
-		B03020DD236C3DA7006582C8 /* SpyPhotoCollectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyPhotoCollectionInteractor.swift; sourceTree = "<group>"; };
-		B03020DE236C3DA7006582C8 /* PhotoCollectionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionInteractor.swift; sourceTree = "<group>"; };
-		B03020DF236C3DA7006582C8 /* PhotoCollectionInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionInteractorTests.swift; sourceTree = "<group>"; };
-		B03020E2236C3DA7006582C8 /* PhotoCollectionItemDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionItemDTO.swift; sourceTree = "<group>"; };
-		B03020E4236C3DA7006582C8 /* PhotoCollectionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionRepository.swift; sourceTree = "<group>"; };
-		B03020E6236C3DA7006582C8 /* SpyPhotoCollectionRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyPhotoCollectionRepository.swift; sourceTree = "<group>"; };
-		B03020E7236C3DA7006582C8 /* PhotoCollectionRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionRepositoryTests.swift; sourceTree = "<group>"; };
-		B03020EA236C3DA7006582C8 /* SpyPhotoCollectionMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyPhotoCollectionMapper.swift; sourceTree = "<group>"; };
-		B03020EB236C3DA7006582C8 /* PhotoCollectionMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionMapper.swift; sourceTree = "<group>"; };
-		B03020EC236C3DA7006582C8 /* PhotoCollectionMapperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionMapperTests.swift; sourceTree = "<group>"; };
 		B03020EF236C3DA7006582C8 /* PhotoCollectionPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionPresenterProtocol.swift; sourceTree = "<group>"; };
 		B03020F0236C3DA7006582C8 /* PhotoCollectionPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionPresenterTests.swift; sourceTree = "<group>"; };
 		B03020F1236C3DA7006582C8 /* PhotoCollectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionPresenter.swift; sourceTree = "<group>"; };
@@ -165,6 +145,7 @@
 		B00CABDB2370615200941C56 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				B00CABE323707B0A00941C56 /* __mock__ */,
 				B00CABDC2370615C00941C56 /* AlbumInteractor.swift */,
 				B00CABDE2370616700941C56 /* AlbumInteractorTests.swift */,
 			);
@@ -175,6 +156,14 @@
 			isa = PBXGroup;
 			children = (
 				B00CABE1237062CF00941C56 /* SpyAlbumRepository.swift */,
+			);
+			path = __mock__;
+			sourceTree = "<group>";
+		};
+		B00CABE323707B0A00941C56 /* __mock__ */ = {
+			isa = PBXGroup;
+			children = (
+				B00CABE423707B1800941C56 /* SpyAlbumInteractor.swift */,
 			);
 			path = __mock__;
 			sourceTree = "<group>";
@@ -202,8 +191,8 @@
 		B030206C236C3C7B006582C8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B03020A3236C3D7A006582C8 /* Features */,
 				B0302114236C3E23006582C8 /* Router */,
+				B03020A3236C3D7A006582C8 /* Scenes */,
 				B0302085236C3CEC006582C8 /* Shared */,
 				B0302084236C3C8B006582C8 /* SupportingFiles */,
 			);
@@ -315,112 +304,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B03020A3236C3D7A006582C8 /* Features */ = {
+		B03020A3236C3D7A006582C8 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				B03020D7236C3DA7006582C8 /* PhotoCollection */,
 				B0B4BF40236C44C50065EEEF /* PhotoDetails */,
 			);
-			path = Features;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		B03020D7236C3DA7006582C8 /* PhotoCollection */ = {
 			isa = PBXGroup;
 			children = (
-				B03020D8236C3DA7006582C8 /* BusinessLogic */,
-				B03020E0236C3DA7006582C8 /* Data */,
 				B03020ED236C3DA7006582C8 /* Presentation */,
 			);
 			path = PhotoCollection;
-			sourceTree = "<group>";
-		};
-		B03020D8236C3DA7006582C8 /* BusinessLogic */ = {
-			isa = PBXGroup;
-			children = (
-				B03020D9236C3DA7006582C8 /* Models */,
-				B03020DB236C3DA7006582C8 /* Interactor */,
-			);
-			path = BusinessLogic;
-			sourceTree = "<group>";
-		};
-		B03020D9236C3DA7006582C8 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				B03020DA236C3DA7006582C8 /* PhotoCollectionItem.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		B03020DB236C3DA7006582C8 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				B03020DC236C3DA7006582C8 /* __mock__ */,
-				B03020DE236C3DA7006582C8 /* PhotoCollectionInteractor.swift */,
-				B03020DF236C3DA7006582C8 /* PhotoCollectionInteractorTests.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		B03020DC236C3DA7006582C8 /* __mock__ */ = {
-			isa = PBXGroup;
-			children = (
-				B03020DD236C3DA7006582C8 /* SpyPhotoCollectionInteractor.swift */,
-			);
-			path = __mock__;
-			sourceTree = "<group>";
-		};
-		B03020E0236C3DA7006582C8 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				B03020E1236C3DA7006582C8 /* DTO */,
-				B03020E3236C3DA7006582C8 /* Repository */,
-				B03020E8236C3DA7006582C8 /* Mapper */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		B03020E1236C3DA7006582C8 /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-				B03020E2236C3DA7006582C8 /* PhotoCollectionItemDTO.swift */,
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		B03020E3236C3DA7006582C8 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				B03020E5236C3DA7006582C8 /* __mock__ */,
-				B03020E4236C3DA7006582C8 /* PhotoCollectionRepository.swift */,
-				B03020E7236C3DA7006582C8 /* PhotoCollectionRepositoryTests.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		B03020E5236C3DA7006582C8 /* __mock__ */ = {
-			isa = PBXGroup;
-			children = (
-				B03020E6236C3DA7006582C8 /* SpyPhotoCollectionRepository.swift */,
-			);
-			path = __mock__;
-			sourceTree = "<group>";
-		};
-		B03020E8236C3DA7006582C8 /* Mapper */ = {
-			isa = PBXGroup;
-			children = (
-				B03020E9236C3DA7006582C8 /* __mocks__ */,
-				B03020EB236C3DA7006582C8 /* PhotoCollectionMapper.swift */,
-				B03020EC236C3DA7006582C8 /* PhotoCollectionMapperTests.swift */,
-			);
-			path = Mapper;
-			sourceTree = "<group>";
-		};
-		B03020E9236C3DA7006582C8 /* __mocks__ */ = {
-			isa = PBXGroup;
-			children = (
-				B03020EA236C3DA7006582C8 /* SpyPhotoCollectionMapper.swift */,
-			);
-			path = __mocks__;
 			sourceTree = "<group>";
 		};
 		B03020ED236C3DA7006582C8 /* Presentation */ = {
@@ -679,16 +577,11 @@
 				B0302096236C3CEC006582C8 /* ImageInteractor.swift in Sources */,
 				B00698E8236C7A47001C2436 /* AlbumDTO.swift in Sources */,
 				B0A5BC8A236C715C00938AAF /* AlbumRepository.swift in Sources */,
-				B03020FA236C3DA7006582C8 /* PhotoCollectionInteractor.swift in Sources */,
 				B0302107236C3DA7006582C8 /* PhotoCollectionCell.swift in Sources */,
-				B03020FD236C3DA7006582C8 /* PhotoCollectionRepository.swift in Sources */,
 				B00698EA236C7A61001C2436 /* PhotoDTO.swift in Sources */,
 				B0302103236C3DA7006582C8 /* PhotoCollectionPresenterProtocol.swift in Sources */,
 				B0A5BC84236C6A2200938AAF /* Album.swift in Sources */,
-				B0302101236C3DA7006582C8 /* PhotoCollectionMapper.swift in Sources */,
-				B03020FC236C3DA7006582C8 /* PhotoCollectionItemDTO.swift in Sources */,
 				B00698ED236C7B69001C2436 /* AlbumMapper.swift in Sources */,
-				B03020F8236C3DA7006582C8 /* PhotoCollectionItem.swift in Sources */,
 				B0A5BC86236C710400938AAF /* Photo.swift in Sources */,
 				B0302106236C3DA7006582C8 /* PhotoCollectionViewController.swift in Sources */,
 				B0302105236C3DA7006582C8 /* PhotoCollectionPresenter.swift in Sources */,
@@ -703,25 +596,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B030210B236C3DB8006582C8 /* PhotoCollectionRepositoryTests.swift in Sources */,
-				B030210A236C3DB5006582C8 /* PhotoCollectionInteractorTests.swift in Sources */,
 				B030209D236C3CF7006582C8 /* ImageRepositoryTests.swift in Sources */,
-				B0302113236C3DFE006582C8 /* SpyPhotoCollectionMapper.swift in Sources */,
 				B00698F3236C920A001C2436 /* SpyAlbumMapper.swift in Sources */,
 				B0302120236C3F64006582C8 /* SpyHTTPClient.swift in Sources */,
-				B030210C236C3DBB006582C8 /* PhotoCollectionMapperTests.swift in Sources */,
 				B030209E236C3CFE006582C8 /* SpyImageInteractor.swift in Sources */,
 				B030209F236C3D02006582C8 /* SpyImageRepository.swift in Sources */,
 				B0A5BC8C236C71EF00938AAF /* AlbumRepositoryTests.swift in Sources */,
 				B030209C236C3CF4006582C8 /* ImageInteractorTests.swift in Sources */,
+				B00CABE523707B1800941C56 /* SpyAlbumInteractor.swift in Sources */,
 				B00698F0236C7BFF001C2436 /* AlbumMapperTests.swift in Sources */,
 				B030211A236C3E70006582C8 /* AlbumRouterTests.swift in Sources */,
 				B0302121236C3F64006582C8 /* SpyNavigationController.swift in Sources */,
 				B00CABE2237062CF00941C56 /* SpyAlbumRepository.swift in Sources */,
 				B00CABDF2370616700941C56 /* AlbumInteractorTests.swift in Sources */,
-				B0302112236C3DFB006582C8 /* SpyPhotoCollectionRepository.swift in Sources */,
 				B030210D236C3DBE006582C8 /* PhotoCollectionPresenterTests.swift in Sources */,
-				B0302111236C3DF7006582C8 /* SpyPhotoCollectionInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

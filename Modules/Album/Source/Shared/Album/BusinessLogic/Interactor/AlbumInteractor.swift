@@ -6,7 +6,7 @@ final class AlbumInteractor: AlbumInteractorProtocol {
 
     private let dependencies: Dependencies
 
-    init(dependencies: Dependencies) {
+    init(dependencies: Dependencies = .init()) {
         self.dependencies = dependencies
     }
 

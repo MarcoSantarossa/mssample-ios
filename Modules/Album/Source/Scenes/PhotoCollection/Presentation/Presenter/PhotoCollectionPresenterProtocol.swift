@@ -8,6 +8,7 @@ protocol PhotoCollectionPresenterInput: AnyObject {
 }
 
 protocol PhotoCollectionPresenterOutput: AnyObject {
+    var mainTitle: String { get }
     var itemsCount: Int { get }
 
     var onDataDidUpdate: (() -> Void)? { get set }
