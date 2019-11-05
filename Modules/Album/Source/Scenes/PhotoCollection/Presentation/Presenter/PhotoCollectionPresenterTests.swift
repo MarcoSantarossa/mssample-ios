@@ -116,7 +116,7 @@ extension PhotoCollectionPresenterTests {
 
         let result = sut.title(at: 1)
 
-        XCTAssertEqual(result, "Ph")
+        XCTAssertEqual(result, "Ph 2")
     }
 }
 
@@ -224,5 +224,30 @@ extension PhotoCollectionPresenterTests {
         sut.cancelLoadImage(at: 1)
 
         XCTAssertEqual(SpyImageInteractor.shared.cancelCallsCount, 1)
+    }
+}
+
+// MARK: - photoId
+extension PhotoCollectionPresenterTests {
+    func test_photoId_beforeLoadingPhotos_returnsInvalidId() {
+        let result = sut.photoId(at: 10)
+
+        XCTAssertEqual(result, -1)
+    }
+
+    func test_photoId_loadPhotosAndInvalidIndex_returnsInvalidId() {
+        loadItems()
+
+        let result = sut.photoId(at: 10)
+
+        XCTAssertEqual(result, -1)
+    }
+
+    func test_photoId_loadPhotosAndValidIndex_returnsValidId() {
+        loadItems()
+
+        let result = sut.photoId(at: 1)
+
+        XCTAssertEqual(result, 2)
     }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91FB87A2371A56B000BFFE4 /* UIView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FB8792371A56B000BFFE4 /* UIView+Loading.swift */; };
+		A91FB87D2371A633000BFFE4 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FB87C2371A633000BFFE4 /* UIView+Constraints.swift */; };
 		B039BB7A236B4D050079DC6B /* HTTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039BB6B236B4D050079DC6B /* HTTPResponse.swift */; };
 		B039BB7B236B4D050079DC6B /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039BB6C236B4D050079DC6B /* HTTPError.swift */; };
 		B039BB7C236B4D050079DC6B /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039BB6E236B4D050079DC6B /* HTTPRequest.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A91FB8792371A56B000BFFE4 /* UIView+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Loading.swift"; sourceTree = "<group>"; };
+		A91FB87C2371A633000BFFE4 /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		B039BB6B236B4D050079DC6B /* HTTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponse.swift; sourceTree = "<group>"; };
 		B039BB6C236B4D050079DC6B /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		B039BB6E236B4D050079DC6B /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
@@ -72,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A91FB87B2371A61C000BFFE4 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				A91FB8792371A56B000BFFE4 /* UIView+Loading.swift */,
+				A91FB87C2371A633000BFFE4 /* UIView+Constraints.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		B039BB68236B4CDF0079DC6B /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,8 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				B039BB77236B4D050079DC6B /* UINavigationController+Protocol.swift */,
-				B039BB78236B4D050079DC6B /* URLSession+Protocol.swift */,
 				B039BB79236B4D050079DC6B /* UIViewController+Protocol.swift */,
+				B039BB78236B4D050079DC6B /* URLSession+Protocol.swift */,
+				A91FB87B2371A61C000BFFE4 /* UIView */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -301,10 +315,12 @@
 			files = (
 				B039BB7C236B4D050079DC6B /* HTTPRequest.swift in Sources */,
 				B039BB82236B4D050079DC6B /* URLSession+Protocol.swift in Sources */,
+				A91FB87A2371A56B000BFFE4 /* UIView+Loading.swift in Sources */,
 				B039BB7E236B4D050079DC6B /* HTTPClient.swift in Sources */,
 				B039BB7B236B4D050079DC6B /* HTTPError.swift in Sources */,
 				B039BB83236B4D050079DC6B /* UIViewController+Protocol.swift in Sources */,
 				B039BB80236B4D050079DC6B /* AppConfiguration.swift in Sources */,
+				A91FB87D2371A633000BFFE4 /* UIView+Constraints.swift in Sources */,
 				B039BB7A236B4D050079DC6B /* HTTPResponse.swift in Sources */,
 				B039BB81236B4D050079DC6B /* UINavigationController+Protocol.swift in Sources */,
 			);

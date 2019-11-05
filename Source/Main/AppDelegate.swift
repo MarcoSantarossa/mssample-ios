@@ -4,6 +4,7 @@ import Core
 final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var mainRouter: AlbumRouter?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
@@ -16,8 +17,10 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func startMainRouting(in parent: NavigationControllerProtocol) {
-        let mainRouter = AlbumRouter(parent: parent)
-        mainRouter.presentCollection()
+        let router = AlbumRouter(parent: parent)
+        router.presentCollection()
+
+        self.mainRouter = router
     }
 
     private func presentNewMainWindow(root: UINavigationController) -> UIWindow {

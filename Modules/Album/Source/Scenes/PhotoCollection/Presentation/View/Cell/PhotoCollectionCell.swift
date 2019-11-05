@@ -4,11 +4,13 @@ class PhotoCollectionCell: UICollectionViewCell {
 
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
 
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        imageView.image = UIImage(named: "swift-logo", in: Bundle(for: type(of: self)), compatibleWith: nil)
+        imageView.image = nil
+        loadingIndicator.isHidden = false
     }
 
     static var reusableIdentifier: String {
@@ -20,6 +22,7 @@ class PhotoCollectionCell: UICollectionViewCell {
     }
 
     func update(image: UIImage) {
+        loadingIndicator.isHidden = true
         imageView.image = image
     }
 

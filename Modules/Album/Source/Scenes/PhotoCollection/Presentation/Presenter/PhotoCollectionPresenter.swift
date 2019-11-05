@@ -55,7 +55,12 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
 
     func title(at index: Int) -> String {
         guard let album = album, album.photos.count > index else { return "" }
-        return String(album.photos[index].title.split(separator: " ")[0]).capitalized
+        return album.photos[index].title.capitalized
+    }
+
+    func photoId(at index: Int) -> Int {
+        guard let album = album, album.photos.count > index else { return -1 }
+        return album.photos[index].id
     }
 }
 
