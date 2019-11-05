@@ -14,7 +14,10 @@ public final class AlbumRouter: AlbumRouterProtocol {
     }
 
     public func presentCollection() {
-        let viewController = PhotoCollectionViewController()
+        let navigation = PhotoCollectionViewController.Navigation(onPhotoDidSelect: { [weak self] photoId in
+            self?.presentPhotoDetails(photoId: photoId)
+        })
+        let viewController = PhotoCollectionViewController(navigation: navigation)
         parent.setRootViewController(viewController)
     }
 

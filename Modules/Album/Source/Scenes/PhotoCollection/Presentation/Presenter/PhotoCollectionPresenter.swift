@@ -57,6 +57,11 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
         guard let album = album, album.photos.count > index else { return "" }
         return album.photos[index].title.capitalized
     }
+
+    func photoId(at index: Int) -> Int {
+        guard let album = album, album.photos.count > index else { return -1 }
+        return album.photos[index].id
+    }
 }
 
 extension PhotoCollectionPresenter {

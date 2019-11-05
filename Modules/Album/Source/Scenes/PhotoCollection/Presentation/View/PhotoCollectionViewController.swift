@@ -5,9 +5,11 @@ final class PhotoCollectionViewController: UIViewController {
     @IBOutlet private var collectionView: UICollectionView!
 
     private let presenter: PhotoCollectionPresenterProtocol
+    private let navigation: Navigation
 
-    init(presenter: PhotoCollectionPresenterProtocol = PhotoCollectionPresenter()) {
+    init(navigation: Navigation, presenter: PhotoCollectionPresenterProtocol = PhotoCollectionPresenter()) {
         self.presenter = presenter
+        self.navigation = navigation
 
         super.init(nibName: nil, bundle: Bundle(for: PhotoCollectionViewController.self))
 
@@ -78,6 +80,11 @@ extension PhotoCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         presenter.cancelLoadImage(at: indexPath.item)
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoId = presenter.photoId(at: indexPath.item)
+        navigation.onPhotoDidSelect(photoId)
+    }
 }
 
 extension PhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
@@ -88,5 +95,16 @@ extension PhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
         let totalWidth = (flowLayout.minimumInteritemSpacing) + flowLayout.sectionInset.left + flowLayout.sectionInset.right
         let size = (collectionView.frame.size.width - totalWidth) / 2.0
         return CGSize(width: size, height: size)
+    }
+}
+
+extension PhotoCollectionViewController {
+    final class Navigation {
+
+        let onPhotoDidSelect: (_ photoId: Int) -> Void
+
+        init(onPhotoDidSelect: @escaping (_ photoId: Int) -> Void) {
+            self.onPhotoDidSelect = onPhotoDidSelect
+        }
     }
 }
