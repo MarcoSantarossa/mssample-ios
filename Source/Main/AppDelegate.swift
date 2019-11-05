@@ -17,7 +17,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func startMainRouting(in parent: NavigationControllerProtocol) {
         let mainRouter = AlbumRouter(parent: parent)
-        mainRouter.presentCollection()
+        mainRouter.presentPhotoDetails(photoId: 1)
     }
 
     private func presentNewMainWindow(root: UINavigationController) -> UIWindow {
