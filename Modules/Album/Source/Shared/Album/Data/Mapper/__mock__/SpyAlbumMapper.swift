@@ -25,6 +25,4 @@ final class SpyAlbumMapper: AlbumMapperProtocol {
 
         return forcedMapPhotoResult
     }
-
-
 }

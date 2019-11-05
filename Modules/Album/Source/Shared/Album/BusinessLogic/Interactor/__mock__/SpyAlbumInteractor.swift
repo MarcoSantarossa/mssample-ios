@@ -13,7 +13,6 @@ final class SpyAlbumInteractor: AlbumInteractorProtocol {
         completion(getAlbumForcedResult)
     }
 
-
     func getPhoto(id: Int, completion: @escaping (Photo?) -> Void) {
         getPhotoCallsCount += 1
 
