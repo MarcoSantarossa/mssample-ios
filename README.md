@@ -9,7 +9,7 @@ I'm not going to introduce anything new to the community but just put together a
 
 ## Content 📚
 
-* [Gosh, this is overkilling](#gosh,-this-is-overkilling)
+* [Gosh, this is overkilling](#gosh-this-is-overkilling)
 * [Requirements](#requirements)
 * [Features](#features)
   * [Album](#album)
