@@ -1,6 +1,6 @@
 @testable import Album
 
-import Core
+import CoreMock
 import XCTest
 
 final class ImageRepositoryTests: XCTestCase {
