@@ -116,7 +116,7 @@ extension PhotoCollectionPresenterTests {
 
         let result = sut.title(at: 1)
 
-        XCTAssertEqual(result, "Ph")
+        XCTAssertEqual(result, "Ph 2")
     }
 }
 
