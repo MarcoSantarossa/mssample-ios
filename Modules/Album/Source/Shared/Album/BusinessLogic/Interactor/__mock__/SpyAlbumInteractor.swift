@@ -5,6 +5,7 @@ final class SpyAlbumInteractor: AlbumInteractorProtocol {
     var getAlbumForcedResult: Album?
 
     private(set) var getPhotoCallsCount = 0
+    private(set) var getPhotoIdArg: Int!
     var getPhotoForcedResult: Photo?
 
     func getAlbum(completion: @escaping (Album?) -> Void) {
@@ -15,6 +16,7 @@ final class SpyAlbumInteractor: AlbumInteractorProtocol {
 
     func getPhoto(id: Int, completion: @escaping (Photo?) -> Void) {
         getPhotoCallsCount += 1
+        getPhotoIdArg = id
 
         completion(getPhotoForcedResult)
     }

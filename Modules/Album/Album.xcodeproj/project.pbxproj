@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91FB86D237196D6000BFFE4 /* PhotoDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FB86C237196D6000BFFE4 /* PhotoDetailsPresenterTests.swift */; };
+		A91FB8712371A03D000BFFE4 /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FB86F2371A03D000BFFE4 /* PhotoDetailsViewController.swift */; };
+		A91FB8722371A03D000BFFE4 /* PhotoDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A91FB8702371A03D000BFFE4 /* PhotoDetailsViewController.xib */; };
 		B00698E8236C7A47001C2436 /* AlbumDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00698E7236C7A47001C2436 /* AlbumDTO.swift */; };
 		B00698EA236C7A61001C2436 /* PhotoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00698E9236C7A61001C2436 /* PhotoDTO.swift */; };
 		B00698ED236C7B69001C2436 /* AlbumMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00698EC236C7B69001C2436 /* AlbumMapper.swift */; };
@@ -57,6 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A91FB86C237196D6000BFFE4 /* PhotoDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsPresenterTests.swift; sourceTree = "<group>"; };
+		A91FB86F2371A03D000BFFE4 /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		A91FB8702371A03D000BFFE4 /* PhotoDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailsViewController.xib; sourceTree = "<group>"; };
 		B00698E7236C7A47001C2436 /* AlbumDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDTO.swift; sourceTree = "<group>"; };
 		B00698E9236C7A61001C2436 /* PhotoDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDTO.swift; sourceTree = "<group>"; };
 		B00698EC236C7B69001C2436 /* AlbumMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumMapper.swift; sourceTree = "<group>"; };
@@ -119,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A91FB86E2371A025000BFFE4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A91FB86F2371A03D000BFFE4 /* PhotoDetailsViewController.swift */,
+				A91FB8702371A03D000BFFE4 /* PhotoDetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B00698E6236C7A47001C2436 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				B0A4F31023709505000ECB50 /* Presenter */,
+				A91FB86E2371A025000BFFE4 /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -426,6 +442,7 @@
 			children = (
 				B0A4F31223709522000ECB50 /* PhotoDetailsPresenter.swift */,
 				B0A4F31523709546000ECB50 /* PhotoDetailsPresenterProtocol.swift */,
+				A91FB86C237196D6000BFFE4 /* PhotoDetailsPresenterTests.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -570,6 +587,7 @@
 			files = (
 				B0302108236C3DA7006582C8 /* PhotoCollectionCell.xib in Resources */,
 				B0302124236C4081006582C8 /* Assets.xcassets in Resources */,
+				A91FB8722371A03D000BFFE4 /* PhotoDetailsViewController.xib in Resources */,
 				B0302109236C3DA7006582C8 /* PhotoCollectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,6 +620,7 @@
 				B0302105236C3DA7006582C8 /* PhotoCollectionPresenter.swift in Sources */,
 				B00CABDD2370615C00941C56 /* AlbumInteractor.swift in Sources */,
 				B0302095236C3CEC006582C8 /* Image.swift in Sources */,
+				A91FB8712371A03D000BFFE4 /* PhotoDetailsViewController.swift in Sources */,
 				B0302117236C3E23006582C8 /* AlbumRouter.swift in Sources */,
 				B0A4F31323709522000ECB50 /* PhotoDetailsPresenter.swift in Sources */,
 				B030209B236C3CEC006582C8 /* ImageRepository.swift in Sources */,
@@ -622,6 +641,7 @@
 				B00CABE523707B1800941C56 /* SpyAlbumInteractor.swift in Sources */,
 				B00698F0236C7BFF001C2436 /* AlbumMapperTests.swift in Sources */,
 				B030211A236C3E70006582C8 /* AlbumRouterTests.swift in Sources */,
+				A91FB86D237196D6000BFFE4 /* PhotoDetailsPresenterTests.swift in Sources */,
 				B0302121236C3F64006582C8 /* SpyNavigationController.swift in Sources */,
 				B00CABE2237062CF00941C56 /* SpyAlbumRepository.swift in Sources */,
 				B00CABDF2370616700941C56 /* AlbumInteractorTests.swift in Sources */,

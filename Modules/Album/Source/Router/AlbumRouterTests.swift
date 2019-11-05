@@ -38,3 +38,19 @@ extension AlbumRouterTests {
         XCTAssertTrue(navController.setRootViewControllerArg is PhotoCollectionViewController)
     }
 }
+
+// MARK: - presentPhotoDetails
+extension AlbumRouterTests {
+    func test_presentPhotoDetails_callsNavController() {
+        sut.presentPhotoDetails(photoId: 3)
+
+        XCTAssertEqual(navController.pushViewControllerCallsCount, 1)
+    }
+
+    func test_presentPhotoDetails_callsNavControllerWithRightArg() {
+        sut.presentPhotoDetails(photoId: 3)
+
+        XCTAssertTrue(navController.pushViewControllerArg is PhotoDetailsViewController)
+        XCTAssertTrue(navController.pushViewControllerAnimatedArg)
+    }
+}
