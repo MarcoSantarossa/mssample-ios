@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift-logo" translatesAutoresizingMaskIntoConstraints="NO" id="3hw-gx-MkA">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3hw-gx-MkA">
                     <rect key="frame" x="10" y="54" width="394" height="448"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWi-Db-DW6">
@@ -25,6 +25,10 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dLQ-zz-Z3V">
+                    <rect key="frame" x="188.5" y="259.5" width="37" height="37"/>
+                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -33,18 +37,18 @@
                 <constraint firstItem="jWi-Db-DW6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="QCg-xK-ANt"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3hw-gx-MkA" secondAttribute="trailing" constant="10" id="ZUs-Wp-3l9"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jWi-Db-DW6" secondAttribute="bottom" constant="10" id="bgH-61-VDI"/>
+                <constraint firstItem="dLQ-zz-Z3V" firstAttribute="centerY" secondItem="3hw-gx-MkA" secondAttribute="centerY" id="rLr-w3-3VQ"/>
                 <constraint firstItem="3hw-gx-MkA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="rgH-sK-JTd"/>
                 <constraint firstItem="jWi-Db-DW6" firstAttribute="top" secondItem="3hw-gx-MkA" secondAttribute="bottom" constant="40" id="sux-dc-FhJ"/>
+                <constraint firstItem="dLQ-zz-Z3V" firstAttribute="centerX" secondItem="3hw-gx-MkA" secondAttribute="centerX" id="ycS-Ye-oc8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jWi-Db-DW6" secondAttribute="trailing" constant="10" id="zoH-bN-b6M"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="imageView" destination="3hw-gx-MkA" id="vaL-mA-VZA"/>
+                <outlet property="loadingIndicator" destination="dLQ-zz-Z3V" id="Ff8-dP-zpI"/>
                 <outlet property="titleLabel" destination="jWi-Db-DW6" id="ksM-5b-QQm"/>
             </connections>
         </view>
     </objects>
-    <resources>
-        <image name="swift-logo" width="200" height="180"/>
-    </resources>
 </document>

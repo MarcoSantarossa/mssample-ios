@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="329" height="326"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift-logo" translatesAutoresizingMaskIntoConstraints="NO" id="c16-sq-nFE">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="c16-sq-nFE">
                         <rect key="frame" x="0.0" y="0.0" width="329" height="326"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLL-lb-5p9">
@@ -29,29 +29,33 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gbk-Ix-t0X">
+                        <rect key="frame" x="146" y="149.5" width="37" height="37"/>
+                        <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </activityIndicatorView>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="c16-sq-nFE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0ke-Ht-29U"/>
+                <constraint firstItem="Gbk-Ix-t0X" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="3GO-1H-IqU"/>
                 <constraint firstAttribute="bottom" secondItem="zLL-lb-5p9" secondAttribute="bottom" constant="10" id="HyN-Na-0aL"/>
                 <constraint firstAttribute="bottom" secondItem="c16-sq-nFE" secondAttribute="bottom" id="NMN-mo-dF7"/>
                 <constraint firstItem="c16-sq-nFE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Rjj-yL-ngO"/>
                 <constraint firstItem="zLL-lb-5p9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ujb-Cn-ho6"/>
                 <constraint firstAttribute="trailing" secondItem="zLL-lb-5p9" secondAttribute="trailing" id="UmS-Zx-mAX"/>
                 <constraint firstItem="zLL-lb-5p9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="i8e-PG-JwL"/>
+                <constraint firstItem="Gbk-Ix-t0X" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="tHt-RC-mJb"/>
                 <constraint firstAttribute="trailing" secondItem="c16-sq-nFE" secondAttribute="trailing" id="utN-o0-iPl"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="329" height="326"/>
             <connections>
                 <outlet property="imageView" destination="c16-sq-nFE" id="PVZ-T7-4T6"/>
+                <outlet property="loadingIndicator" destination="Gbk-Ix-t0X" id="58l-4m-9G8"/>
                 <outlet property="titleLabel" destination="zLL-lb-5p9" id="b7W-Fy-ibh"/>
             </connections>
             <point key="canvasLocation" x="-157.24637681159422" y="173.4375"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="swift-logo" width="200" height="180"/>
-    </resources>
 </document>
