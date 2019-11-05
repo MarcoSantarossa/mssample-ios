@@ -1,5 +1,6 @@
 # MS Sample iOS app 📱
 
+![Bitrise master](https://app.bitrise.io/app/3831ffc3a6ccebbf/status.svg?token=lNr1vIk_qeG4911v9YKmOA&branch=master)
 ![Swift version](https://img.shields.io/badge/Swift-5.0-F16D39.svg?style=flat)
 ![Platform](https://img.shields.io/badge/Platform-iOS-blue)
 
