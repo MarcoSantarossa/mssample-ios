@@ -13,5 +13,8 @@
       <FileRef
          location = "group:Modules/Core/Core.xcodeproj">
       </FileRef>
+      <FileRef
+         location = "group:Modules/CoreMock/CoreMock.xcodeproj">
+      </FileRef>
    </Group>
 </Workspace>
