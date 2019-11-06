@@ -3,7 +3,7 @@ import Core
 final class PhotoDetailsViewController: UIViewController {
 
     private let presenter: PhotoDetailsPresenterProtocol
-    private var currentViewStatus: UIView?
+    private var currentViewState: UIView?
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -22,24 +22,24 @@ final class PhotoDetailsViewController: UIViewController {
             guard let self = self else { return }
 
             DispatchQueue.main.async {
-                self.handle(status: self.presenter.status)
+                self.handle(state: self.presenter.state)
             }
         }
     }
 
-    private func handle(status: PhotoDetailsPresenterStatus) {
-        currentViewStatus?.removeFromSuperview()
+    private func handle(state: PhotoDetailsPresenterState) {
+        currentViewState?.removeFromSuperview()
 
-        switch status {
+        switch state {
         case .loading:
-            currentViewStatus = UIView.loadFromNib() as PhotoDetailsLoadingView
+            currentViewState = UIView.loadFromNib() as PhotoDetailsLoadingView
         case .dataNotFound:
-            currentViewStatus = UIView.loadFromNib() as PhotoDetailsLoadingErrorView
+            currentViewState = UIView.loadFromNib() as PhotoDetailsLoadingErrorView
         case .dataAvailable:
-            currentViewStatus = createDataView()
+            currentViewState = createDataView()
         }
 
-        view.addSubviewAndFill(subview: currentViewStatus!)
+        view.addSubviewAndFill(subview: currentViewState!)
     }
 
     private func createDataView() -> PhotoDetailsDataView {
@@ -57,9 +57,9 @@ final class PhotoDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        handle(status: presenter.status)
+        handle(state: presenter.state)
 
-        title = "Photo Details"
+        title = AlbumLocalizable.localize(key: .photoDetailsTitle)
 
         presenter.viewDidLoad()
     }

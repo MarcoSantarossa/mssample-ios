@@ -15,7 +15,4 @@ final class PhotoDetailsDataView: UIView {
 
         imageView.image = image
     }
-    deinit {
-        print("deinit \(self)")
-    }
 }

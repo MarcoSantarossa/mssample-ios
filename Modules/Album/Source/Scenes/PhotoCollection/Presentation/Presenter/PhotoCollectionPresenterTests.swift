@@ -1,23 +1,27 @@
 @testable import Album
 
+import CoreMock
 import XCTest
 
 final class PhotoCollectionPresenterTests: XCTestCase {
 
     private var sut: PhotoCollectionPresenter!
     private var interactor: SpyAlbumInteractor!
+    private var localizer: SpyLocalizer!
     private var imageInteractors = [String: SpyImageInteractor]()
 
     override func setUp() {
         super.setUp()
 
         interactor = SpyAlbumInteractor()
-        sut = PhotoCollectionPresenter(dependencies: .init(interactor: interactor, imageInteractorType: SpyImageInteractor.self))
+        localizer = SpyLocalizer()
+        sut = PhotoCollectionPresenter(dependencies: .init(interactor: interactor, imageInteractorType: SpyImageInteractor.self, localizer: localizer))
     }
 
     override func tearDown() {
         sut = nil
         interactor = nil
+        localizer = nil
 
         SpyImageInteractor.clean()
 
@@ -37,18 +41,57 @@ final class PhotoCollectionPresenterTests: XCTestCase {
 
 // MARK: - mainTitle
 extension PhotoCollectionPresenterTests {
-    func test_mainTitle_beforeLoadingItems_returnsDefault() {
-        let result = sut.mainTitle
+    func test_mainTitle_beforeLoadingItems_callsLocalizer() {
+        localizer.localizeForcedResult = "test"
 
-        XCTAssertEqual(result, "Not available")
+        _ = sut.mainTitle
+
+        XCTAssertEqual(localizer.localizeCallsCount, 1)
     }
 
-    func test_mainTitle_afterLoadingItems_returnsExpectedValue() {
+    func test_mainTitle_beforeLoadingItems_callsLocalizerWithRightArgs() {
+        localizer.localizeForcedResult = "test"
+
+        _ = sut.mainTitle
+
+        XCTAssertEqual(localizer.localizeValueArg, "photo_collection_title_not_available")
+        XCTAssertEqual(localizer.localizeTableNameArg, "AlbumLocalizable")
+    }
+
+    func test_mainTitle_beforeLoadingItems_returnsLocalizerValue() {
+        localizer.localizeForcedResult = "test"
+
+        let result = sut.mainTitle
+
+        XCTAssertEqual(result, localizer.localizeForcedResult)
+    }
+
+    func test_mainTitle_afterLoadingItems_callsLocalizer() {
+        localizer.localizeForcedResult = "test"
+        loadItems()
+
+        _ = sut.mainTitle
+
+        XCTAssertEqual(localizer.localizeCallsCount, 1)
+    }
+
+    func test_mainTitle_afterLoadingItems_callsLocalizerWithRightArgs() {
+        localizer.localizeForcedResult = "test"
+        loadItems()
+
+        _ = sut.mainTitle
+
+        XCTAssertEqual(localizer.localizeValueArg, "photo_collection_title")
+        XCTAssertEqual(localizer.localizeTableNameArg, "AlbumLocalizable")
+    }
+
+    func test_mainTitle_afterLoadingItems_returnsLocalizerValue() {
+        localizer.localizeForcedResult = "test"
         loadItems()
 
         let result = sut.mainTitle
 
-        XCTAssertEqual(result, "Album: a1")
+        XCTAssertEqual(result, localizer.localizeForcedResult)
     }
 }
 

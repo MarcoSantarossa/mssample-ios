@@ -1,0 +1,6 @@
+"photo_collection_title" = "Album: %@";
+"photo_collection_title_not_available" = "Non disponibile";
+
+"photo_details_title" = "Dettagli Foto";
+"photo_details_loading_message" = "Caricamento delle informazioni";
+"photo_details_loading_error_message" = "Si è verificato un errore, riprova più tardi.";

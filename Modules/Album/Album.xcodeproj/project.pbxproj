@@ -48,6 +48,8 @@
 		B0302124236C4081006582C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0302123236C4081006582C8 /* Assets.xcassets */; };
 		B0A4F31323709522000ECB50 /* PhotoDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A4F31223709522000ECB50 /* PhotoDetailsPresenter.swift */; };
 		B0A4F31623709546000ECB50 /* PhotoDetailsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A4F31523709546000ECB50 /* PhotoDetailsPresenterProtocol.swift */; };
+		B0A4F31E2372DC26000ECB50 /* AlbumLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0A4F3202372DC26000ECB50 /* AlbumLocalizable.strings */; };
+		B0A4F3252372F9F6000ECB50 /* AlbumLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A4F3242372F9F6000ECB50 /* AlbumLocalizable.swift */; };
 		B0A5BC84236C6A2200938AAF /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A5BC83236C6A2200938AAF /* Album.swift */; };
 		B0A5BC86236C710400938AAF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A5BC85236C710400938AAF /* Photo.swift */; };
 		B0A5BC8A236C715C00938AAF /* AlbumRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A5BC89236C715C00938AAF /* AlbumRepository.swift */; };
@@ -109,6 +111,9 @@
 		B0302123236C4081006582C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0A4F31223709522000ECB50 /* PhotoDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsPresenter.swift; sourceTree = "<group>"; };
 		B0A4F31523709546000ECB50 /* PhotoDetailsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsPresenterProtocol.swift; sourceTree = "<group>"; };
+		B0A4F31F2372DC26000ECB50 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/AlbumLocalizable.strings; sourceTree = "<group>"; };
+		B0A4F3212372DC37000ECB50 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/AlbumLocalizable.strings; sourceTree = "<group>"; };
+		B0A4F3242372F9F6000ECB50 /* AlbumLocalizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumLocalizable.swift; sourceTree = "<group>"; };
 		B0A5BC83236C6A2200938AAF /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		B0A5BC85236C710400938AAF /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		B0A5BC89236C715C00938AAF /* AlbumRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumRepository.swift; sourceTree = "<group>"; };
@@ -235,6 +240,7 @@
 		B030206C236C3C7B006582C8 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B0A4F3232372F9E4000ECB50 /* Localization */,
 				B0302114236C3E23006582C8 /* Router */,
 				B03020A3236C3D7A006582C8 /* Scenes */,
 				B0302085236C3CEC006582C8 /* Shared */,
@@ -416,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				B0302123236C4081006582C8 /* Assets.xcassets */,
+				B0A4F3202372DC26000ECB50 /* AlbumLocalizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -431,6 +438,7 @@
 		B0A4F30F237094EF000ECB50 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				B0A4F3222372F5CB000ECB50 /* Localization */,
 				B0A4F31023709505000ECB50 /* Presenter */,
 				A91FB86E2371A025000BFFE4 /* View */,
 			);
@@ -445,6 +453,21 @@
 				A91FB86C237196D6000BFFE4 /* PhotoDetailsPresenterTests.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B0A4F3222372F5CB000ECB50 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		B0A4F3232372F9E4000ECB50 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B0A4F3242372F9F6000ECB50 /* AlbumLocalizable.swift */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		B0A5BC80236C656900938AAF /* Album */ = {
@@ -568,6 +591,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				it,
 			);
 			mainGroup = B0302060236C3C7B006582C8;
 			productRefGroup = B030206B236C3C7B006582C8 /* Products */;
@@ -590,6 +614,7 @@
 				B0302108236C3DA7006582C8 /* PhotoCollectionCell.xib in Resources */,
 				B0302124236C4081006582C8 /* Assets.xcassets in Resources */,
 				A91FB8722371A03D000BFFE4 /* PhotoDetailsViewController.xib in Resources */,
+				B0A4F31E2372DC26000ECB50 /* AlbumLocalizable.strings in Resources */,
 				A91FB8852371A7E8000BFFE4 /* PhotoDetailsLoadingErrorView.xib in Resources */,
 				B0302109236C3DA7006582C8 /* PhotoCollectionViewController.xib in Resources */,
 			);
@@ -621,6 +646,7 @@
 				B0302103236C3DA7006582C8 /* PhotoCollectionPresenterProtocol.swift in Sources */,
 				B0A5BC84236C6A2200938AAF /* Album.swift in Sources */,
 				B00698ED236C7B69001C2436 /* AlbumMapper.swift in Sources */,
+				B0A4F3252372F9F6000ECB50 /* AlbumLocalizable.swift in Sources */,
 				B0A5BC86236C710400938AAF /* Photo.swift in Sources */,
 				B0302106236C3DA7006582C8 /* PhotoCollectionViewController.swift in Sources */,
 				B0302105236C3DA7006582C8 /* PhotoCollectionPresenter.swift in Sources */,
@@ -663,11 +689,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		B0A4F3202372DC26000ECB50 /* AlbumLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0A4F31F2372DC26000ECB50 /* en */,
+				B0A4F3212372DC37000ECB50 /* it */,
+			);
+			name = AlbumLocalizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		B030207C236C3C7B006582C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -732,6 +771,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

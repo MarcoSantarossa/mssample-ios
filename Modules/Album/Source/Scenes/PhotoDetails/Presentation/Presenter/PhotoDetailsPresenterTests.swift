@@ -32,26 +32,26 @@ final class PhotoDetailsPresenterTests: XCTestCase {
     }
 }
 
-// MARK: - status
+// MARK: - state
 extension PhotoDetailsPresenterTests {
-    func test_status_default_returnsLoading() {
-        let result = sut.status
+    func test_state_default_returnsLoading() {
+        let result = sut.state
 
         XCTAssertEqual(result, .loading)
     }
 
-    func test_status_loadPhotoNil_returnsDataNotFound() {
+    func test_state_loadPhotoNil_returnsDataNotFound() {
         loadPhoto(nil)
 
-        let result = sut.status
+        let result = sut.state
 
         XCTAssertEqual(result, .dataNotFound)
     }
 
-    func test_status_loadPhoto_returnsDataAvailable() {
+    func test_state_loadPhoto_returnsDataAvailable() {
         loadPhoto()
 
-        let result = sut.status
+        let result = sut.state
 
         XCTAssertEqual(result, .dataAvailable)
     }

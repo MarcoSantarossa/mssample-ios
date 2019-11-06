@@ -1,3 +1,4 @@
+import Core
 import UIKit
 
 final class PhotoDetailsLoadingView: UIView {
@@ -7,6 +8,6 @@ final class PhotoDetailsLoadingView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        messageLabel.text = "Loading photo details data"
+        messageLabel.text = AlbumLocalizable.localize(key: .photoDetailsLoadingMessage)
     }
 }

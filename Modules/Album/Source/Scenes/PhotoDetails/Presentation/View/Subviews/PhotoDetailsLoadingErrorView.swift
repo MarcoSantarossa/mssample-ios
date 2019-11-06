@@ -1,3 +1,4 @@
+import Core
 import UIKit
 
 final class PhotoDetailsLoadingErrorView: UIView {
@@ -7,6 +8,6 @@ final class PhotoDetailsLoadingErrorView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        messageLabel.text = "An error occured, please try later."
+        messageLabel.text = AlbumLocalizable.localize(key: .photoDetailsLoadingErrorMessage)
     }
 }
