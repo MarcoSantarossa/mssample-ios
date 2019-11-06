@@ -1,6 +1,6 @@
 import Foundation
 
-enum PhotoDetailsPresenterStatus {
+enum PhotoDetailsPresenterState {
     case loading
     case dataAvailable
     case dataNotFound
@@ -13,7 +13,7 @@ protocol PhotoDetailsPresenterInput: AnyObject {
 protocol PhotoDetailsPresenterOutput: AnyObject {
     var onDataDidUpdate: (() -> Void)? { get set }
 
-    var status: PhotoDetailsPresenterStatus { get }
+    var state: PhotoDetailsPresenterState { get }
 
     var photoTitle: String { get }
 

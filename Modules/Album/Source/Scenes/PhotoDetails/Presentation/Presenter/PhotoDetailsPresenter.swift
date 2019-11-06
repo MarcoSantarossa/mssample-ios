@@ -6,7 +6,7 @@ final class PhotoDetailsPresenter: PhotoDetailsPresenterProtocol {
         return currentPhoto?.title ?? ""
     }
 
-    var status: PhotoDetailsPresenterStatus = .loading {
+    var state: PhotoDetailsPresenterState = .loading {
         didSet {
             onDataDidUpdate?()
         }
@@ -16,7 +16,7 @@ final class PhotoDetailsPresenter: PhotoDetailsPresenterProtocol {
     private let photoId: Int
     private var currentPhoto: Photo? {
         didSet {
-            status = currentPhoto == nil ? .dataNotFound : .dataAvailable
+            state = currentPhoto == nil ? .dataNotFound : .dataAvailable
         }
     }
 
