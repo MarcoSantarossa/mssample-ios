@@ -21,9 +21,20 @@ final class PhotoCollectionViewController: UIViewController {
             guard let self = self else { return }
 
             DispatchQueue.main.async {
-                self.title = self.presenter.mainTitle
-                self.collectionView.reloadData()
+                self.handle(state: self.presenter.state)
             }
+        }
+    }
+
+    private func handle(state: PhotoCollectionPresenterState) {
+        switch state {
+        case .loading:
+            title = "Loading..."
+        case .dataNotFound:
+            title = AlbumLocalizable.localize(key: .photoCollectionTitleNotAvailable)
+        case .dataAvailable:
+            title = String(format: AlbumLocalizable.localize(key: .photoCollectionTitle), presenter.albumTitle)
+            self.collectionView.reloadData()
         }
     }
 
@@ -33,6 +44,8 @@ final class PhotoCollectionViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        handle(state: presenter.state)
 
         registerCollectionCell()
 
