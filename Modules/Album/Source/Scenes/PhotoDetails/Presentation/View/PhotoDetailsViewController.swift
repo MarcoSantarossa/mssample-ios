@@ -59,7 +59,7 @@ final class PhotoDetailsViewController: UIViewController {
 
         handle(status: presenter.status)
 
-        title = "Photo Details"
+        title = AlbumLocalizable.localize(key: .photoDetailsTitle)
 
         presenter.viewDidLoad()
     }
