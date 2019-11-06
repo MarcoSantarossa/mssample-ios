@@ -1,5 +1,11 @@
 import Foundation
 
+enum PhotoCollectionPresenterState {
+    case loading
+    case dataAvailable
+    case dataNotFound
+}
+
 protocol PhotoCollectionPresenterInput: AnyObject {
     func viewDidLoad()
 
@@ -8,7 +14,9 @@ protocol PhotoCollectionPresenterInput: AnyObject {
 }
 
 protocol PhotoCollectionPresenterOutput: AnyObject {
-    var mainTitle: String { get }
+    var state: PhotoCollectionPresenterState { get }
+
+    var albumTitle: String { get }
     var itemsCount: Int { get }
 
     var onDataDidUpdate: (() -> Void)? { get set }

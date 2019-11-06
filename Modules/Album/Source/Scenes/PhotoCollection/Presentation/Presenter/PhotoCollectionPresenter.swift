@@ -1,22 +1,26 @@
 import Core
 
 final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
+
+    var state: PhotoCollectionPresenterState = .loading {
+        didSet {
+            onDataDidUpdate?()
+        }
+    }
+
     var itemsCount: Int {
         return album?.photos.count ?? 0
     }
     var onDataDidUpdate: (() -> Void)?
 
-    var mainTitle: String {
-        guard let albumTitle = album?.title else {
-            return AlbumLocalizable.localize(key: .photoCollectionTitleNotAvailable, localizer: dependencies.localizer)
-        }
-        return String(format: AlbumLocalizable.localize(key: .photoCollectionTitle, localizer: dependencies.localizer), albumTitle)
+    var albumTitle: String {
+        return album?.title ?? ""
     }
 
     private let dependencies: Dependencies
     private var album: Album? {
         didSet {
-            self.onDataDidUpdate?()
+            state = album == nil ? .dataNotFound : .dataAvailable
         }
     }
     private var queue = [Int: ImageInteractorProtocol]()
@@ -70,14 +74,11 @@ extension PhotoCollectionPresenter {
     final class Dependencies {
         let interactor: AlbumInteractorProtocol
         let imageInteractorType: ImageInteractorProtocol.Type
-        let localizer: LocalizerProtocol
 
         init(interactor: AlbumInteractorProtocol = AlbumInteractor(),
-             imageInteractorType: ImageInteractorProtocol.Type = ImageInteractor.self,
-             localizer: LocalizerProtocol = Localizer()) {
+             imageInteractorType: ImageInteractorProtocol.Type = ImageInteractor.self) {
             self.interactor = interactor
             self.imageInteractorType = imageInteractorType
-            self.localizer = localizer
         }
     }
 }
