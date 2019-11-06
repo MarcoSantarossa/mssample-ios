@@ -1,4 +1,4 @@
-import Foundation
+import Core
 
 final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
     var itemsCount: Int {
@@ -7,8 +7,10 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
     var onDataDidUpdate: (() -> Void)?
 
     var mainTitle: String {
-        guard let albumTitle = album?.title else { return "Not available" }
-        return "Album: \(albumTitle)"
+        guard let albumTitle = album?.title else {
+            return AlbumLocalizable.localize(key: .photoCollectionTitleNotAvailable, localizer: dependencies.localizer)
+        }
+        return String(format: AlbumLocalizable.localize(key: .photoCollectionTitle, localizer: dependencies.localizer), albumTitle)
     }
 
     private let dependencies: Dependencies
@@ -68,11 +70,14 @@ extension PhotoCollectionPresenter {
     final class Dependencies {
         let interactor: AlbumInteractorProtocol
         let imageInteractorType: ImageInteractorProtocol.Type
+        let localizer: LocalizerProtocol
 
         init(interactor: AlbumInteractorProtocol = AlbumInteractor(),
-             imageInteractorType: ImageInteractorProtocol.Type = ImageInteractor.self) {
+             imageInteractorType: ImageInteractorProtocol.Type = ImageInteractor.self,
+             localizer: LocalizerProtocol = Localizer()) {
             self.interactor = interactor
             self.imageInteractorType = imageInteractorType
+            self.localizer = localizer
         }
     }
 }

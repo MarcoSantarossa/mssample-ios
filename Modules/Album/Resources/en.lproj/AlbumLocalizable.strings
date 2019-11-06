@@ -1,4 +1,5 @@
 "photo_collection_title" = "Album: %@";
+"photo_collection_title_not_available" = "Not available";
 
 "photo_details_title" = "Photo Details";
 "photo_details_loading_message" = "Loading photo details data";
