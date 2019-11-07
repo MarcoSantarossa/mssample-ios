@@ -1,6 +1,6 @@
 final class PhotoDetailsPresenter: PhotoDetailsPresenterProtocol {
 
-    var onDataDidUpdate: (() -> Void)?
+    var onStateDidChange: ((PhotoDetailsPresenterState) -> Void)?
 
     var photoTitle: String {
         return currentPhoto?.title ?? ""
@@ -8,7 +8,7 @@ final class PhotoDetailsPresenter: PhotoDetailsPresenterProtocol {
 
     var state: PhotoDetailsPresenterState = .loading {
         didSet {
-            onDataDidUpdate?()
+            onStateDidChange?(state)
         }
     }
 
