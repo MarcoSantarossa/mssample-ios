@@ -21,7 +21,7 @@ final class PhotoDetailsViewController: UIViewController {
         presenter.onStateDidChange = { [weak self] state in
             guard let self = self else { return }
 
-            DispatchQueue.main.async{
+            DispatchQueue.main.async {
                 self.handle(state: state)
             }
         }
