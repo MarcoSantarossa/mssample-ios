@@ -86,6 +86,62 @@ extension PhotoCollectionPresenterTests {
 
         XCTAssertEqual(interactor.getAlbumCallsCount, 1)
     }
+
+    func test_viewDidLoad_LoadItemsNil_callsOnStateDidChange() {
+        var onStateDidChangeCallsCount = 0
+        sut.onStateDidChange = { _ in
+            onStateDidChangeCallsCount += 1
+        }
+        interactor.getAlbumForcedResult = nil
+
+        sut.viewDidLoad()
+
+        XCTAssertEqual(onStateDidChangeCallsCount, 1)
+    }
+
+    func test_viewDidLoad_LoadItemsNil_callsOnStateDidChangeWithRightArg() {
+        var onStateDidChangeArg: PhotoCollectionPresenterState!
+        sut = PhotoCollectionPresenter(dependencies: .init(interactor: interactor))
+        sut.onStateDidChange = { onStateDidChangeArg = $0 }
+        interactor.getAlbumForcedResult = nil
+
+        sut.viewDidLoad()
+
+        XCTAssertEqual(onStateDidChangeArg, .dataNotFound)
+    }
+
+    func test_viewDidLoad_LoadItems_callsOnStateDidChange() {
+        var onStateDidChangeCallsCount = 0
+        sut.onStateDidChange = { _ in
+            onStateDidChangeCallsCount += 1
+        }
+        interactor.getAlbumForcedResult = Album(id: 10, title: "a1", photos: [
+            Photo(id: 1, title: "ph 1", url: "url 1", thumbnailUrl: "th url 1"),
+            Photo(id: 2, title: "ph 2", url: "url 2", thumbnailUrl: "th url 2"),
+            Photo(id: 3, title: "ph 3", url: "url 3", thumbnailUrl: "th url 3")
+
+            ])
+
+        sut.viewDidLoad()
+
+        XCTAssertEqual(onStateDidChangeCallsCount, 1)
+    }
+
+    func test_viewDidLoad_LoadItems_callsOnStateDidChangeWithRightArg() {
+        var onStateDidChangeArg: PhotoCollectionPresenterState!
+        sut = PhotoCollectionPresenter(dependencies: .init(interactor: interactor))
+        sut.onStateDidChange = { onStateDidChangeArg = $0 }
+        interactor.getAlbumForcedResult = Album(id: 10, title: "a1", photos: [
+            Photo(id: 1, title: "ph 1", url: "url 1", thumbnailUrl: "th url 1"),
+            Photo(id: 2, title: "ph 2", url: "url 2", thumbnailUrl: "th url 2"),
+            Photo(id: 3, title: "ph 3", url: "url 3", thumbnailUrl: "th url 3")
+
+            ])
+
+        sut.viewDidLoad()
+
+        XCTAssertEqual(onStateDidChangeArg, .dataAvailable)
+    }
 }
 
 // MARK: - itemsCount
@@ -105,28 +161,17 @@ extension PhotoCollectionPresenterTests {
     }
 }
 
-// MARK: - onDataDidUpdate
+// MARK: - onStateDidChange
 extension PhotoCollectionPresenterTests {
-    func test_onDataDidUpdate_beforeLoadingItems_isNotCalled() {
-        var onDataDidUpdateCallsCount = 0
+    func test_onStateDidChange_beforeLoadingItems_isNotCalled() {
+        var onStateDidChangeCallsCount = 0
         sut = PhotoCollectionPresenter(dependencies: .init(interactor: interactor))
 
-        sut.onDataDidUpdate = {
-            onDataDidUpdateCallsCount += 1
+        sut.onStateDidChange = { _ in
+            onStateDidChangeCallsCount += 1
         }
 
-        XCTAssertEqual(onDataDidUpdateCallsCount, 0)
-    }
-
-    func test_onDataDidUpdate_afterLoadingItems_isNotCalled() {
-        var onDataDidUpdateCallsCount = 0
-        sut = PhotoCollectionPresenter(dependencies: .init(interactor: interactor))
-        sut.onDataDidUpdate = {
-            onDataDidUpdateCallsCount += 1
-        }
-        loadItems()
-
-        XCTAssertEqual(onDataDidUpdateCallsCount, 1)
+        XCTAssertEqual(onStateDidChangeCallsCount, 0)
     }
 }
 

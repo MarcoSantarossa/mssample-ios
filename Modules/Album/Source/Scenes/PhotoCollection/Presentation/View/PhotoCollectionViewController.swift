@@ -17,11 +17,11 @@ final class PhotoCollectionViewController: UIViewController {
     }
 
     private func bindPresenter() {
-        presenter.onDataDidUpdate = { [weak self] in
+        presenter.onStateDidChange = { [weak self] state in
             guard let self = self else { return }
 
             DispatchQueue.main.async {
-                self.handle(state: self.presenter.state)
+                self.handle(state: state)
             }
         }
     }

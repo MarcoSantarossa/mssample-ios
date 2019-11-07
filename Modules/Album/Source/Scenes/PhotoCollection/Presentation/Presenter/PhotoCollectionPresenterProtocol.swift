@@ -19,7 +19,7 @@ protocol PhotoCollectionPresenterOutput: AnyObject {
     var albumTitle: String { get }
     var itemsCount: Int { get }
 
-    var onDataDidUpdate: (() -> Void)? { get set }
+    var onStateDidChange: ((PhotoCollectionPresenterState) -> Void)? { get set }
 
     func title(at index: Int) -> String
     func photoId(at index: Int) -> Int
