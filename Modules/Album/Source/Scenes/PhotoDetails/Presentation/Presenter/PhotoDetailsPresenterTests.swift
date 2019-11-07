@@ -74,21 +74,31 @@ extension PhotoDetailsPresenterTests {
     func test_viewDidLoad_photoNil_callsUpdate() {
         albumInteractor.getPhotoForcedResult = nil
         var updateCallsCount = 0
-        sut.onDataDidUpdate = { updateCallsCount += 1 }
+        sut.onStateDidChange = { _ in updateCallsCount += 1 }
 
         sut.viewDidLoad()
 
         XCTAssertEqual(updateCallsCount, 1)
     }
 
-    func test_viewDidLoad_photoNotNil_callsUpdate() {
-        albumInteractor.getPhotoForcedResult = Photo(id: 1, title: "t1", url: "u1", thumbnailUrl: "tu1")
-        var updateCallsCount = 0
-        sut.onDataDidUpdate = { updateCallsCount += 1 }
+    func test_viewDidLoad_photoNil_callsUpdateWithRightArg() {
+        albumInteractor.getPhotoForcedResult = nil
+        var updateState: PhotoDetailsPresenterState!
+        sut.onStateDidChange = { updateState = $0 }
 
         sut.viewDidLoad()
 
-        XCTAssertEqual(updateCallsCount, 1)
+        XCTAssertEqual(updateState, .dataNotFound)
+    }
+
+    func test_viewDidLoad_photoNotNil_callsUpdate() {
+        albumInteractor.getPhotoForcedResult = Photo(id: 1, title: "t1", url: "u1", thumbnailUrl: "tu1")
+        var updateState: PhotoDetailsPresenterState!
+        sut.onStateDidChange = { updateState = $0 }
+
+        sut.viewDidLoad()
+
+        XCTAssertEqual(updateState, .dataAvailable)
     }
 }
 

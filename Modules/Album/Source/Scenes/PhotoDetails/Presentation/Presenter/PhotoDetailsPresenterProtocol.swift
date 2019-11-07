@@ -11,7 +11,7 @@ protocol PhotoDetailsPresenterInput: AnyObject {
 }
 
 protocol PhotoDetailsPresenterOutput: AnyObject {
-    var onDataDidUpdate: (() -> Void)? { get set }
+    var onStateDidChange: ((PhotoDetailsPresenterState) -> Void)? { get set }
 
     var state: PhotoDetailsPresenterState { get }
 

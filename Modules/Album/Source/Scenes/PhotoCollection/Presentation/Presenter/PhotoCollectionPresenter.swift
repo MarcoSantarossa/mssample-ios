@@ -4,14 +4,14 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
 
     var state: PhotoCollectionPresenterState = .loading {
         didSet {
-            onDataDidUpdate?()
+            onStateDidChange?(state)
         }
     }
 
     var itemsCount: Int {
         return album?.photos.count ?? 0
     }
-    var onDataDidUpdate: (() -> Void)?
+    var onStateDidChange: ((PhotoCollectionPresenterState) -> Void)?
 
     var albumTitle: String {
         return album?.title ?? ""
