@@ -10,7 +10,6 @@ I'm not going to introduce anything new to the community but just put together a
 
 ## Content 📚
 
-* [Gosh, this is overkilling](#gosh-this-is-overkilling)
 * [Requirements](#requirements)
 * [Features](#features)
   * [Album](#album)
@@ -18,20 +17,13 @@ I'm not going to introduce anything new to the community but just put together a
 * [Architecture](#architecture)
 * [License](#license)
 
-## Gosh, this is overkilling
-
-I'm going to advocate an approach which has several layers and several small classes. If you think that your codebase doesn't need such approach and it's just an overkilling paranoia, that's perfectly fine, I want to save your time, you can close now your browser tab 🤕
-
-If you are keen to see something which could help you to write a scalable codebase, welcome 🙌🏻
-
-
 ## Requirements
 
-* iOS 10.0+
+* iOS 11.0+
 * Xcode 10.2+
-* Swift 5+
+* Swift 5
 
-Open **MSSampleiOS.xcworkspace** which includes all the modules.
+You mush open **MSSampleiOS.xcworkspace**—which includes all the modules.
 
 ## Features
 
