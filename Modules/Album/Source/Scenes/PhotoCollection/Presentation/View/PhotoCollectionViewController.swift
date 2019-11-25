@@ -24,6 +24,18 @@ final class PhotoCollectionViewController: UIViewController {
                 self.handle(state: state)
             }
         }
+
+        presenter.onImageDidLoad = { [weak self] index, data in
+            DispatchQueue.main.async {
+                guard
+                    let self = self,
+                    let cell = self.collectionView.cellForItem(at: IndexPath(item: index, section: 0)),
+                    let photoCell = cell as? PhotoCollectionCell,
+                    let image = UIImage(data: data) else { return }
+
+                photoCell.update(image: image)
+            }
+        }
     }
 
     private func handle(state: PhotoCollectionPresenterState) {
@@ -76,22 +88,11 @@ extension PhotoCollectionViewController: UICollectionViewDataSource {
 
 extension PhotoCollectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        guard let cell = cell as? PhotoCollectionCell else {
-            fatalError("Cell at \(indexPath.item) is not a PhotoCollectionCell")
-        }
-
-        presenter.startLoadImage(at: indexPath.item) { [weak cell] data in
-            guard let cell = cell else { return }
-
-            DispatchQueue.main.async {
-                guard let image = UIImage(data: data) else { return }
-                cell.update(image: image)
-            }
-        }
+        presenter.itemDidShow(at: indexPath.item)
     }
 
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        presenter.cancelLoadImage(at: indexPath.item)
+        presenter.itemDidHide(at: indexPath.item)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

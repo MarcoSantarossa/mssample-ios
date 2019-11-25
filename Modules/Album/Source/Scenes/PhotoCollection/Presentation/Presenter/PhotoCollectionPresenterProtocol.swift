@@ -9,8 +9,8 @@ enum PhotoCollectionPresenterState {
 protocol PhotoCollectionPresenterInput: AnyObject {
     func viewDidLoad()
 
-    func startLoadImage(at index: Int, completion: @escaping (Data) -> Void)
-    func cancelLoadImage(at index: Int)
+    func itemDidShow(at index: Int)
+    func itemDidHide(at index: Int)
 }
 
 protocol PhotoCollectionPresenterOutput: AnyObject {
@@ -20,6 +20,7 @@ protocol PhotoCollectionPresenterOutput: AnyObject {
     var itemsCount: Int { get }
 
     var onStateDidChange: ((PhotoCollectionPresenterState) -> Void)? { get set }
+    var onImageDidLoad: ((_ index: Int, _ image: Data) -> Void)? { get set }
 
     func title(at index: Int) -> String
     func photoId(at index: Int) -> Int

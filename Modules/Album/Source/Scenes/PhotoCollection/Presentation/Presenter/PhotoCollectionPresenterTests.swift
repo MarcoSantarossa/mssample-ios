@@ -192,113 +192,6 @@ extension PhotoCollectionPresenterTests {
     }
 }
 
-// MARK: - startLoadImage
-extension PhotoCollectionPresenterTests {
-    func test_startLoadImage_invalidIndex_doesNotCreateImageInteractor() {
-        sut.startLoadImage(at: 10) { _ in }
-
-        XCTAssertNil(SpyImageInteractor.shared)
-    }
-
-    func test_startLoadImage_validIndex_createsImageInteractor() {
-        loadItems()
-
-        sut.startLoadImage(at: 1) { _ in }
-
-        XCTAssertNotNil(SpyImageInteractor.shared)
-    }
-
-    func test_startLoadImage_validIndex_callsInteractor() {
-        loadItems()
-
-        sut.startLoadImage(at: 1) { _ in }
-
-        XCTAssertEqual(SpyImageInteractor.shared.getImageCallsCount, 1)
-    }
-
-    func test_startLoadImage_validIndex_callsInteractorWithRightArg() {
-        loadItems()
-
-        sut.startLoadImage(at: 1) { _ in }
-
-        XCTAssertEqual(SpyImageInteractor.shared.getImageUrlArg, "th url 2")
-    }
-
-    func test_startLoadImage_completionUsesInteractorImage() {
-        let data = "data test".data(using: .utf8)!
-        SpyImageInteractor.forcedGetImage = Image(id: "1", data: data)
-        var arg: Data!
-        loadItems()
-
-        sut.startLoadImage(at: 1) { arg = $0 }
-
-        XCTAssertEqual(arg, data)
-    }
-
-    func test_startLoadImage_calledTwiceSameIndex_skipSecondImageInteractor() {
-        loadItems()
-
-        sut.startLoadImage(at: 1) { _ in }
-        let currentImageInteractor = SpyImageInteractor.shared
-        sut.startLoadImage(at: 1) { _ in }
-
-        XCTAssertTrue(currentImageInteractor === SpyImageInteractor.shared)
-        XCTAssertEqual(currentImageInteractor?.getImageCallsCount, 1)
-    }
-
-    func test_startLoadImage_calledTwiceDifferentIndex_createsImageInteractorTwice() {
-        loadItems()
-
-        sut.startLoadImage(at: 1) { _ in }
-        let currentImageInteractor = SpyImageInteractor.shared
-        sut.startLoadImage(at: 2) { _ in }
-
-        XCTAssertTrue(currentImageInteractor !== SpyImageInteractor.shared)
-    }
-
-    func test_startLoadImage_calledTwiceDifferentIndex_callsImageInteractorTwice() {
-        loadItems()
-
-        sut.startLoadImage(at: 1) { _ in }
-        let currentImageInteractor = SpyImageInteractor.shared
-        sut.startLoadImage(at: 2) { _ in }
-
-        XCTAssertEqual(currentImageInteractor?.getImageCallsCount, 1)
-        XCTAssertEqual(SpyImageInteractor.shared.getImageCallsCount, 1)
-    }
-}
-
-// MARK: - cancelLoadImage
-extension PhotoCollectionPresenterTests {
-    func test_cancelLoadImage_invalidIndex_doesNotCallInteractor() {
-        loadItems()
-        sut.startLoadImage(at: 1) { _ in }
-
-        sut.cancelLoadImage(at: 10)
-
-        XCTAssertEqual(SpyImageInteractor.shared.cancelCallsCount, 0)
-    }
-
-    func test_cancelLoadImage_validIndex_callsInteractor() {
-        loadItems()
-        sut.startLoadImage(at: 1) { _ in }
-
-        sut.cancelLoadImage(at: 1)
-
-        XCTAssertEqual(SpyImageInteractor.shared.cancelCallsCount, 1)
-    }
-
-    func test_cancelLoadImage_calledTwice_callsInteractorOnce() {
-        loadItems()
-        sut.startLoadImage(at: 1) { _ in }
-
-        sut.cancelLoadImage(at: 1)
-        sut.cancelLoadImage(at: 1)
-
-        XCTAssertEqual(SpyImageInteractor.shared.cancelCallsCount, 1)
-    }
-}
-
 // MARK: - photoId
 extension PhotoCollectionPresenterTests {
     func test_photoId_beforeLoadingPhotos_returnsInvalidId() {
@@ -321,5 +214,62 @@ extension PhotoCollectionPresenterTests {
         let result = sut.photoId(at: 1)
 
         XCTAssertEqual(result, 2)
+    }
+}
+
+// MARK: - itemDidShow
+extension PhotoCollectionPresenterTests {
+    func test_itemDidShow_invalidIndex_doesntCallClosure() {
+        var closureCallsCount = 0
+        sut.onImageDidLoad = { _, _ in
+            closureCallsCount += 1
+        }
+
+        sut.itemDidShow(at: 10)
+
+        XCTAssertEqual(closureCallsCount, 0)
+    }
+
+    func test_itemDidShow_validIndex_callsClosure() {
+        let data = "data test".data(using: .utf8)!
+        SpyImageInteractor.forcedGetImage = Image(id: "1", data: data)
+        loadItems()
+        var closureCallsCount = 0
+        sut.onImageDidLoad = { _, _ in
+            closureCallsCount += 1
+        }
+
+        sut.itemDidShow(at: 1)
+
+        XCTAssertEqual(closureCallsCount, 1)
+    }
+
+    func test_itemDidShow_validIndex_callsClosureWithRightArgs() {
+        let dataInput = "data test".data(using: .utf8)!
+        SpyImageInteractor.forcedGetImage = Image(id: "1", data: dataInput)
+        loadItems()
+        var indexArg: Int!
+        var dataArg: Data!
+        sut.onImageDidLoad = {
+            indexArg = $0
+            dataArg = $1
+        }
+
+        sut.itemDidShow(at: 1)
+
+        XCTAssertEqual(indexArg, 1)
+        XCTAssertEqual(dataArg, dataInput)
+    }
+}
+
+// MARK: - itemDidHide
+extension PhotoCollectionPresenterTests {
+    func test_itemDidHide_validIndex_cancelRequest() {
+        loadItems()
+        sut.itemDidShow(at: 1)
+
+        sut.itemDidHide(at: 1)
+
+        XCTAssertEqual(SpyImageInteractor.shared.cancelCallsCount, 1)
     }
 }

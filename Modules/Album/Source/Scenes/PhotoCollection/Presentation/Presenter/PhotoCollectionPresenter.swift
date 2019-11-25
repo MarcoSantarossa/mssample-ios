@@ -2,6 +2,9 @@ import Core
 
 final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
 
+    var onStateDidChange: ((PhotoCollectionPresenterState) -> Void)?
+    var onImageDidLoad: ((_ index: Int, _ image: Data) -> Void)?
+
     var state: PhotoCollectionPresenterState = .loading {
         didSet {
             onStateDidChange?(state)
@@ -11,7 +14,6 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
     var itemsCount: Int {
         return album?.photos.count ?? 0
     }
-    var onStateDidChange: ((PhotoCollectionPresenterState) -> Void)?
 
     var albumTitle: String {
         return album?.title ?? ""
@@ -41,24 +43,6 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
         }
     }
 
-    func startLoadImage(at index: Int, completion: @escaping (Data) -> Void) {
-        guard let album = album, queue[index] == nil && index < album.photos.count else { return }
-
-        let imageInteractor = dependencies.imageInteractorType.init()
-        queue[index] = imageInteractor
-
-        imageInteractor.getImage(at: album.photos[index].thumbnailUrl) { image in
-            completion(image.data)
-        }
-    }
-
-    func cancelLoadImage(at index: Int) {
-        guard let interactor = queue[index] else { return }
-        interactor.cancel()
-
-        queue[index] = nil
-    }
-
     func title(at index: Int) -> String {
         guard let album = album, album.photos.count > index else { return "" }
         return album.photos[index].title.capitalized
@@ -67,6 +51,24 @@ final class PhotoCollectionPresenter: PhotoCollectionPresenterProtocol {
     func photoId(at index: Int) -> Int {
         guard let album = album, album.photos.count > index else { return -1 }
         return album.photos[index].id
+    }
+
+    func itemDidShow(at index: Int) {
+        guard let album = album, album.photos.count > index else { return }
+
+        let imageInteractor = dependencies.imageInteractorType.init()
+        queue[index] = imageInteractor
+
+        imageInteractor.getImage(at: album.photos[index].thumbnailUrl) { [weak self] image in
+            self?.onImageDidLoad?(index, image.data)
+        }
+    }
+
+    func itemDidHide(at index: Int) {
+        guard let interactor = queue[index] else { return }
+        interactor.cancel()
+
+        queue[index] = nil
     }
 }
 
