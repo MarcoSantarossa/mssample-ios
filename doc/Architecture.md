@@ -6,19 +6,18 @@ The core of the architecture follows [3-tier architecture](https://en.wikipedia.
 
 The three layers (Presentation / Business Logic (also called Domain) / Data) are macro blocks to split our architecture objects.
 
-# Content 📚
+## Content 📚
 
-- [Three-tier_architecture](#three-tier-architecture)
-  - [Presentation](#presentation)
-    - [Router](#router)
-    - [View](#view)
-    - [Presenter](#presenter)
-  - [Business Logic](#business-logic)
-    - [Interactor](#interactor)
-  - [Data](#data)
-    - [Data Mapper](#data-mapper)
-    - [Repository](#repository)
-  - [Layers communication](#layers-communication)
+- [Presentation](#presentation)
+  - [Router](#router)
+  - [View](#view)
+  - [Presenter](#presenter)
+- [Business Logic](#business-logic)
+  - [Interactor](#interactor)
+- [Data](#data)
+  - [Data Mapper](#data-mapper)
+  - [Repository](#repository)
+- [Layers communication](#layers-communication)
 
 ## Presentation
 
