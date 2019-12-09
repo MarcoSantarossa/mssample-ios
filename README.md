@@ -14,7 +14,7 @@ I'm not going to introduce anything new to the community but just put together a
 * [Features](#features)
   * [Album](#album)
 * [Modularization](#modularization)
-* [Architecture](#architecture)
+* [Architecture](./doc/Architecture.md)
 * [License](#license)
 
 ## Requirements
@@ -50,18 +50,6 @@ We have also a `CoreMock` to contain the [test doubles](https://marcosantadev.co
 The module `Album` is a vertical module and provides the implementation for the feature photo collection and photo details views. It uses `Core` for main functionalities like `UIKit` extensions and networking.
 
 Each module should expose a public router to allow the app to orchestrate the routing.
-
-## Architecture
-
-![Architecture](./.github/images/architecture-1.jpg)
-
-The core of the architecture follows [3-tier architecture](https://en.wikipedia.org/wiki/Multitier_architecture#Three-tier_architecture) to split and decouple the responsibilities.
-
-* Data Mapper: It maps the data source data with the feature entity (like `AlbumDTO` to `Album`). If we use DTOs, we no longer have to soil our main entities with parsing logics like `Decodable` or 3rd party libraries.
-* Repository: It contains the logic to fetch and send the data to the correct data source.
-* Interactor: It contains the logic of how to get an entity. It often proxy just the call to a repo. It could seem overkilling but it's a good way to decouple business logic and data logic. It will allows you to scale faster since in the future you might need to orchestrate more than one repo to create the feature model.
-* Presenter: It contains the main presentation data logic. It drives the view controller.
-* Router: It creates the entire feature stack (Interactor/Presenter/View) and present to a parent `UIKit` controller.
 
 ## License
 
