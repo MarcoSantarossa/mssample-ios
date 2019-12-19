@@ -11,6 +11,8 @@ public class Cache<Key: AnyObject, Value: AnyObject>: CacheProtocol {
 
     private let cache = NSCache<Key, Value>()
 
+    public init() {}
+
     public func get(key: Key) -> Value? {
         return cache.object(forKey: key)
     }
