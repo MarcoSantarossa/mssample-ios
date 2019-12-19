@@ -1,16 +1,16 @@
 import Core
 
-public protocol ImageCacheProtocol: AnyObject {
-    func getImageData(key: String) -> Data?
-    func setImageData(value: Data, key: String)
+protocol ImageCacheProtocol: AnyObject {
+    func getImageData(key: String) -> Image?
+    func setImageData(value: Image, key: String)
 }
 
-extension Cache: ImageCacheProtocol where Cache.Key == NSString, Cache.Value == NSData {
-    public func getImageData(key: String) -> Data? {
-        return self.get(key: (key as NSString)) as Data?
+extension Cache: ImageCacheProtocol where Cache.Key == NSString, Cache.Value == Image {
+    func getImageData(key: String) -> Image? {
+        return self.get(key: (key as NSString))
     }
 
-    public func setImageData(value: Data, key: String) {
-        self.set(value: (value as NSData), key: (key as NSString))
+    func setImageData(value: Image, key: String) {
+        self.set(value: value, key: (key as NSString))
     }
 }

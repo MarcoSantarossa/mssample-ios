@@ -14,9 +14,14 @@ final class ImageRepository: ImageRepositoryProtocol {
     }
 
     func getImage(at url: String, completion: @escaping (Image) -> Void) {
+        if let imageData = dependencies.imageCache.getImageData(key: url) {
+            completion(imageData)
+            return
+        }
         let request = HTTPRequest(url: url, method: .GET)
-        dependencies.httpClient.fetch(with: request) { result in
+        dependencies.httpClient.fetch(with: request) { [weak self] result in
             guard
+                let self = self,
                 case .success(let response) = result,
                 let data = response.body else {
                 return
@@ -24,6 +29,7 @@ final class ImageRepository: ImageRepositoryProtocol {
 
             let image = Image(id: url, data: data)
             completion(image)
+            self.dependencies.imageCache.setImageData(value: image, key: url)
         }
     }
 
@@ -35,9 +41,12 @@ final class ImageRepository: ImageRepositoryProtocol {
 extension ImageRepository {
     final class Dependencies {
         let httpClient: HTTPClientProtocol
+        let imageCache: ImageCacheProtocol
 
-        init(httpClient: HTTPClientProtocol = HTTPClient()) {
+        init(httpClient: HTTPClientProtocol = HTTPClient(),
+             imageCache: ImageCacheProtocol = AlbumEnvironment.shared.imageCache) {
             self.httpClient = httpClient
+            self.imageCache = imageCache
         }
     }
 }

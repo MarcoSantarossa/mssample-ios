@@ -1,14 +1,14 @@
 import Core
 
-public final class SpyCache<Key: AnyObject, Value: AnyObject>: CacheProtocol {
+public final class SpyCache<Key: AnyObject & Hashable, Value: AnyObject>: CacheProtocol {
 
     public private(set) var getCallsCount = 0
     public var getKeyArg: Key!
-    public var forcedGetValue: Value?
+    public var forcedGetValue = [Key: Value]()
 
     public private(set) var setCallsCount = 0
     public var setKeyArg: Key!
-    public var setValueArg: Value?
+    public var setValueArg: Value!
 
     public init() {}
 
@@ -16,7 +16,7 @@ public final class SpyCache<Key: AnyObject, Value: AnyObject>: CacheProtocol {
         getCallsCount += 1
         getKeyArg = key
 
-        return forcedGetValue
+        return forcedGetValue[key]
     }
 
     public func set(value: Value, key: Key) {
