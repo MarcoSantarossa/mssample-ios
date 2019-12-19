@@ -10,6 +10,7 @@
 		A91FB88A2371BEE0000BFFE4 /* SpyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FB8872371BEE0000BFFE4 /* SpyNavigationController.swift */; };
 		A91FB88B2371BEE0000BFFE4 /* SpyHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91FB8892371BEE0000BFFE4 /* SpyHTTPClient.swift */; };
 		A91FB88E2371BF0A000BFFE4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A91FB88D2371BF0A000BFFE4 /* Core.framework */; };
+		A9433E3523ABFA1B00280467 /* SpyCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9433E3423ABFA1B00280467 /* SpyCache.swift */; };
 		B06636CF236B1662004F326C /* CoreMock.h in Headers */ = {isa = PBXBuildFile; fileRef = B06636C1236B1662004F326C /* CoreMock.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0A4F3292372FF10000ECB50 /* SpyLocalizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A4F3282372FF10000ECB50 /* SpyLocalizer.swift */; };
 /* End PBXBuildFile section */
@@ -18,6 +19,7 @@
 		A91FB8872371BEE0000BFFE4 /* SpyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyNavigationController.swift; sourceTree = "<group>"; };
 		A91FB8892371BEE0000BFFE4 /* SpyHTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpyHTTPClient.swift; sourceTree = "<group>"; };
 		A91FB88D2371BF0A000BFFE4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9433E3423ABFA1B00280467 /* SpyCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyCache.swift; sourceTree = "<group>"; };
 		B06636BE236B1662004F326C /* CoreMock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreMock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06636C1236B1662004F326C /* CoreMock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreMock.h; sourceTree = "<group>"; };
 		B06636C2236B1662004F326C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +62,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A9433E3323ABFA1000280467 /* Caching */ = {
+			isa = PBXGroup;
+			children = (
+				A9433E3423ABFA1B00280467 /* SpyCache.swift */,
+			);
+			path = Caching;
+			sourceTree = "<group>";
+		};
 		B039BB68236B4CDF0079DC6B /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		B06636C0236B1662004F326C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A9433E3323ABFA1000280467 /* Caching */,
 				B0A4F3272372FEFA000ECB50 /* Localization */,
 				A91FB8882371BEE0000BFFE4 /* Network */,
 				B039BB68236B4CDF0079DC6B /* SupportingFiles */,
@@ -185,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A91FB88A2371BEE0000BFFE4 /* SpyNavigationController.swift in Sources */,
+				A9433E3523ABFA1B00280467 /* SpyCache.swift in Sources */,
 				B0A4F3292372FF10000ECB50 /* SpyLocalizer.swift in Sources */,
 				A91FB88B2371BEE0000BFFE4 /* SpyHTTPClient.swift in Sources */,
 			);
