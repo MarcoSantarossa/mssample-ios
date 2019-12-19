@@ -1,6 +1,6 @@
 import Foundation
 
-class Image {
+final class Image {
     let id: String
     let data: Data
 

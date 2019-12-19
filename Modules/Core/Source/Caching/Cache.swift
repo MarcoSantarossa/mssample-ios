@@ -7,7 +7,7 @@ public protocol CacheProtocol: AnyObject {
     func set(value: Value, key: Key)
 }
 
-public class Cache<Key: AnyObject, Value: AnyObject>: CacheProtocol {
+public final class Cache<Key: AnyObject, Value: AnyObject>: CacheProtocol {
 
     private let cache = NSCache<Key, Value>()
 
