@@ -142,9 +142,11 @@ func fetchItems() {
 
 ## Business Logic
 
+This layer is the core of a feature. It should contain the models defined through a software design session—even better, using DDD. It contains also the [Interactor](#interactor) which is—most of the time—just a proxy to the repository (from the data layer).
+
 ### Interactor
 
-It contains the logic of how to get an entity. It often proxy just the call to a repo. It could seem overkilling but it's a good way to decouple business logic and data logic. It will allows you to scale faster since in the future you might need to orchestrate more than one repo to create the feature model.
+It contains the logic to how to get an entity. It's often just proxy just the call to a repo. It could seem overkilling but it's a good way to decouple business logic and data logic. It will allows you to scale faster since in the future you might need to orchestrate more than one repo to create the feature model.
 
 ## Data
 
